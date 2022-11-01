@@ -1,12 +1,16 @@
 import React, { useRef } from 'react';
-import { Html, useGLTF } from '@react-three/drei';
-import Iframe from '../iframe/Iframe';
+import { Html, useGLTF, useBounds } from '@react-three/drei';
 
 const Laptop = (props) => {
+  const bounds = useBounds();
+
+  // const [contentRef, setContentRef] = useState(null);
   const group = useRef();
   const { nodes, materials } = useGLTF(
     'https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf'
   );
+  // const mountNode = contentRef?.contentWindow?.document?.body;
+
   return (
     <>
       <group ref={group} {...props} dispose={null}>
@@ -150,7 +154,7 @@ const Laptop = (props) => {
         distanceFactor={1.13}
         position={[0, 1.5, -1.4]}
         rotation-x={-0.256}>
-        <iframe title='iframe' src='/iframe' />
+        <iframe title='iframe' src='http://localhost:3006' />
       </Html>
     </>
   );

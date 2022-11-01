@@ -1,6 +1,5 @@
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Iframe from '../components/iframe/Iframe';
 import Experience from '../components/experience/Experience';
 import App from '../App';
 export const routes = createBrowserRouter([
@@ -14,10 +13,6 @@ export const routes = createBrowserRouter([
         element: <Experience />,
       },
     ],
-  },
-  {
-    path: '/iframe',
-    element: <Iframe />,
   },
 ]);
 
