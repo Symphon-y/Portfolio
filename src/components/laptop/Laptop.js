@@ -154,7 +154,7 @@ const Laptop = (props) => {
         distanceFactor={1.13}
         position={[0, 1.5, -1.4]}
         rotation-x={-0.256}>
-        <iframe title='iframe' src='http://localhost:3006' />
+        <iframe title='iframe' src='http://www.TravisRedden.com:3006' />
       </Html>
     </>
   );
