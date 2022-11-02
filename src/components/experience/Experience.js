@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import {
   Text,
   Float,
@@ -9,7 +10,7 @@ import {
 import Laptop from '../laptop/Laptop';
 import Coffee from '../coffee/Coffee';
 import Keyboard from '../keyboard/Keyboard';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useThree } from '@react-three/fiber';
 import ClickToZoom from '../clickToZoom/ClickToZoom';
 
 const Experience = () => {

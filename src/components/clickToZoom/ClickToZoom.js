@@ -1,7 +1,15 @@
+import { useState, useEffect } from 'react';
 import { useBounds } from '@react-three/drei';
-
+import { useThree } from '@react-three/fiber';
 const ClickToZoom = ({ children }) => {
   const bounds = useBounds();
+  const [camera, setCamera] = useState();
+  const state = useThree();
+
+  useEffect(() => {
+    setCamera(state.camera);
+  });
+
   return (
     <group
       onClick={(e) => (
@@ -9,7 +17,7 @@ const ClickToZoom = ({ children }) => {
       )}
       onPointerMissed={(e) => {
         console.log(e);
-        return e.button === 0 && bounds.refresh().fit();
+        return e.button === 0 && bounds.refresh(camera).fit();
       }}>
       {children}
     </group>
