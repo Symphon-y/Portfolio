@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
+import ZoomWrapper from '../zoom-wrapper/ZoomWrapper';
 
 const Coffee = (props) => {
   const group = useRef();
@@ -7,9 +8,13 @@ const Coffee = (props) => {
     'https://market-assets.fra1.cdn.digitaloceanspaces.com/market-assets/models/spilling-coffee/model.gltf'
   );
   return (
-    <group ref={group} {...props} dispose={null}>
-      <mesh geometry={nodes.Cup.geometry} material={nodes.Cup.material}>
+    <ZoomWrapper>
+      <mesh
+        name='coffee'
+        geometry={nodes.Cup.geometry}
+        material={nodes.Cup.material}>
         <mesh
+          name='coffee'
           geometry={nodes.Cube.geometry}
           material={nodes.Cube.material}
           material-transparent
@@ -17,7 +22,7 @@ const Coffee = (props) => {
           material-color={'#c2a289'}
         />
       </mesh>
-    </group>
+    </ZoomWrapper>
   );
 };
 
