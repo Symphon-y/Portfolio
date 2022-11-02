@@ -19,7 +19,8 @@ export default function ZoomWrapper({
       clicked.current = ref.current.getObjectByName(params?.id);
       if (clicked.current) {
         clicked.current.parent.updateWorldMatrix(true, true);
-        clicked.current.parent.localToWorld(p.set(0, 7, 5));
+        // clicked.current.parent.localToWorld(p.set(0, 7, 5));
+        clicked.current.parent.localToWorld(p.set(0, GOLDENRATIO / 2, 1.25));
         clicked.current.parent.getWorldQuaternion(q);
       } else {
         p.set(0, 0, 5.5);

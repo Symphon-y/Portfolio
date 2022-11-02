@@ -50,7 +50,7 @@ const Experience = () => {
               position={[0, 0.55, -1.15]}
             />
             {/* <ClickToZoom> */}
-            <mesh name='monitor' position-y={-1.2} scale={1.25}>
+            <mesh position-y={-1.2} scale={1.25}>
               <Laptop />
             </mesh>
             {/* Adds text to the scene */}
