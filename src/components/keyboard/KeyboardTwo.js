@@ -16,6 +16,7 @@ const Keyboard = (props) => {
   useEffect(() => {
     const handleKeyDown = (e) => {
       const keypress = e.code;
+      console.log(keypress);
       if (key[`set${keypress}`]) {
         key[`set${keypress}`](keypress);
       }
@@ -492,84 +493,93 @@ const Keyboard = (props) => {
           userData={{ name: 'Cube.001' }}
         />
         <animated.mesh
-          name='Cube002'
+          name='KeyZ'
+          ref={key.keyZRef}
           castShadow
           receiveShadow
           geometry={nodes.Cube002.geometry}
           material={materials['keycaps2.003']}
-          position={[-0.06729859, -0.0001249, 0.01502963]}
+          position={key.keyZPosition}
           rotation={[0.05235988, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.002' }}
         />
+        {/* Tab intentionally left nonfunctional (it grabs iframe on press causing it to not rebound correctly) */}
         <animated.mesh
-          name='Cube003'
+          name='Tab'
+          ref={key.tab}
           castShadow
           receiveShadow
           geometry={nodes.Cube003.geometry}
           material={materials['keycaps.001']}
-          position={[-0.09473687, 0.00162915, -0.01492494]}
+          position={key.tabPosition}
           rotation={[0.05235988, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.003' }}
         />
         <animated.mesh
-          name='Cube004'
+          name='KeyQ'
+          ref={key.keyQRef}
           castShadow
           receiveShadow
           geometry={nodes.Cube004.geometry}
           material={materials['keycaps2.004']}
-          position={[-0.0772986, 0.00144518, -0.01492925]}
+          position={key.keyQPosition}
           rotation={[0.05235988, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.004' }}
         />
         <animated.mesh
-          name='Cube005'
+          name='CapsLock'
+          ref={key.capsLockRef}
           castShadow
           receiveShadow
           geometry={nodes.Cube005.geometry}
           material={materials['keycaps.002']}
-          position={[-0.09223933, 0.0009753, 0.00005654]}
+          position={key.capsLockPosition}
           rotation={[0.05235988, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.005' }}
         />
         <animated.mesh
-          name='Cube006'
+          name='ShiftLeft'
+          ref={key.shiftLeftRef}
           castShadow
           receiveShadow
           geometry={nodes.Cube006.geometry}
           material={materials['keycaps.001']}
-          position={[-0.08969236, 0.00028382, 0.01503743]}
+          position={key.shiftLeftPosition}
           rotation={[0.05235988, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.006' }}
         />
         <animated.mesh
-          name='Cube007'
+          name='Space'
+          ref={key.spaceRef}
           castShadow
           receiveShadow
           geometry={nodes.Cube007.geometry}
           material={materials['keycaps.004']}
-          position={[-0.0101736, -0.00018264, 0.03002318]}
+          position={key.spacePosition}
           rotation={[0.05235988, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.007' }}
         />
         <animated.mesh
-          name='Cube008'
+          name='ControlLeft'
+          ref={key.controlLeftRef}
           castShadow
           receiveShadow
           geometry={nodes.Cube008.geometry}
           material={materials['keycaps.005']}
-          position={[-0.0963335, -0.00082607, 0.03001072]}
+          position={key.controlLeftPosition}
           rotation={[0.05235988, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.008' }}
         />
+        {/* Meta (windows/apple/linux/super) intentionally left non functional */}
         <animated.mesh
-          name='Cube009'
+          name='MetaLeft'
           castShadow
           receiveShadow
           geometry={nodes.Cube009.geometry}
@@ -580,18 +590,20 @@ const Keyboard = (props) => {
           userData={{ name: 'Cube.009' }}
         />
         <animated.mesh
-          name='Cube010'
+          name='AltLeft'
+          ref={key.altLeftRef}
           castShadow
           receiveShadow
           geometry={nodes.Cube010.geometry}
           material={materials['keycaps.007']}
-          position={[-0.06276722, -0.00084373, 0.03001156]}
+          position={key.altLeftPosition}
           rotation={[0.05235988, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.010' }}
         />
+        {/* The "Menu key" left non functional intentionally */}
         <animated.mesh
-          name='Cube011'
+          name='Menu'
           castShadow
           receiveShadow
           geometry={nodes.Cube011.geometry}
@@ -601,8 +613,9 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.011' }}
         />
+        {/* Right win/super/mac ect key, intentionally left non functional */}
         <animated.mesh
-          name='Cube012'
+          name='Super'
           castShadow
           receiveShadow
           geometry={nodes.Cube012.geometry}
@@ -613,89 +626,97 @@ const Keyboard = (props) => {
           userData={{ name: 'Cube.012' }}
         />
         <animated.mesh
-          name='Cube013'
+          name='AltRight'
+          ref={key.altRightRef}
           castShadow
           receiveShadow
           geometry={nodes.Cube013.geometry}
           material={materials['keycaps.010']}
-          position={[0.04288521, -0.00084373, 0.03001156]}
+          position={key.altRightPosition}
           rotation={[0.05235988, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.013' }}
         />
         <animated.mesh
-          name='Cube014'
+          name='ControlRight'
+          ref={key.controlRightRef}
           castShadow
           receiveShadow
           geometry={nodes.Cube014.geometry}
           material={materials['keycaps.011']}
-          position={[0.09589116, -0.00065773, 0.03001444]}
+          position={key.controlRightPosition}
           rotation={[0.05235988, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.014' }}
         />
         <animated.mesh
-          name='Cube015'
+          name='Backslash'
+          ref={key.backslashRef}
           castShadow
           receiveShadow
           geometry={nodes.Cube015.geometry}
           material={materials['keycaps.012']}
-          position={[0.09729859, 0.00162915, -0.01492494]}
+          position={key.backslashPosition}
           rotation={[0.05235988, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.015' }}
         />
         <animated.mesh
-          name='Cube016'
+          name='Backspace'
+          ref={key.backspaceRef}
           castShadow
           receiveShadow
           geometry={nodes.Cube016.geometry}
           material={materials['keycaps.013']}
-          position={[0.09432064, 0.00253688, -0.02940276]}
+          position={key.backspacePosition}
           rotation={[0.05235988, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.016' }}
         />
         <animated.mesh
-          name='Cube017'
+          name='Enter'
+          ref={key.enterRef}
           castShadow
           receiveShadow
           geometry={nodes.Cube017.geometry}
           material={materials['keycaps.014']}
-          position={[0.09277438, 0.00105213, 0.00005773]}
+          position={key.enterPosition}
           rotation={[0.05235988, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.017' }}
         />
         <animated.mesh
-          name='Cube018'
+          name='ShiftRight'
+          ref={key.shiftRightRef}
           castShadow
           receiveShadow
           geometry={nodes.Cube018.geometry}
           material={materials.keycaps}
-          position={[0.0882763, 0.00038399, 0.01503898]}
+          position={key.shiftRightPosition}
           rotation={[0.05235988, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.018' }}
         />
         <animated.mesh
-          name='Cube039'
+          name='Digit1'
+          ref={key.digit1Ref}
           castShadow
           receiveShadow
           geometry={nodes.Cube039.geometry}
           material={materials['keycaps2.005']}
-          position={[-0.08299859, 0.00220405, -0.02940938]}
+          position={key.digit1Position}
           rotation={[0.05235988, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.039' }}
         />
         <animated.mesh
-          name='Cube040'
+          name='Digit1'
+          ref={key.digit2Ref}
           castShadow
           receiveShadow
           geometry={nodes.Cube040.geometry}
           material={materials['keycaps2.006']}
-          position={[-0.06869859, 0.00220405, -0.02940938]}
+          position={key.digit2Position}
           rotation={[0.05235988, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.040' }}
