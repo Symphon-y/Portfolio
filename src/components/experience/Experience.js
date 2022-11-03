@@ -9,10 +9,11 @@ import {
 } from '@react-three/drei';
 import Laptop from '../laptop/Laptop';
 import Coffee from '../coffee/Coffee';
-import Keyboard from '../keyboard/Keyboard';
+import Keyboard from '../keyboard/KeyboardTwo';
 import { Canvas, useThree } from '@react-three/fiber';
 import ClickToZoom from '../clickToZoom/ClickToZoom';
 import ZoomWrapper from '../zoom-wrapper/ZoomWrapper';
+import KeyboardTwo from '../keyboard/KeyboardTwo';
 
 const Experience = () => {
   return (
@@ -72,9 +73,15 @@ const Experience = () => {
               <Coffee />
             </mesh>
             {/* Adds Keyboard Mesh */}
-            <mesh
+            {/* <mesh
               position={[-1.25, -2, -0.75]}
               scale={1}
+              rotation-y={Math.PI * -0.25}>
+              <Keyboard />
+            </mesh> */}
+            <mesh
+              position={[-2, -1.55, 0.2]}
+              scale={15}
               rotation-y={Math.PI * -0.25}>
               <Keyboard />
             </mesh>
