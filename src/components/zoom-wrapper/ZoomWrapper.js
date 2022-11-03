@@ -57,7 +57,9 @@ export default function ZoomWrapper({
           clicked.current === e.object ? '/' : '/item/' + e.object.name
         );
       }}
-      onPointerMissed={() => setLocation('/')}>
+      onPointerMissed={(e) => {
+        setLocation('/');
+      }}>
       {children}
     </group>
   );
