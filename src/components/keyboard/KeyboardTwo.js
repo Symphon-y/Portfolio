@@ -1,15 +1,43 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useContext } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import ZoomWrapper from '../zoom-wrapper/ZoomWrapper';
+import { useSpring, animated, config } from '@react-spring/three';
+import { KeyboardContext } from '../../context/KeyboardContext';
 
 const Keyboard = (props) => {
+  const key = useContext(KeyboardContext);
+
+  //SECTION - Refs
   const group = useRef();
+
   const { nodes, materials, animations } = useGLTF('/keyboard.glb');
   const { actions } = useAnimations(animations, group);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      const keypress = e.code;
+      if (key[`set${keypress}`]) {
+        key[`set${keypress}`](keypress);
+      }
+    };
+    const handleKeyUp = (e) => {
+      const keypress = e.code;
+      if (key[`set${keypress}`]) {
+        key[`set${keypress}`](false);
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('keyup', handleKeyUp);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('keyup', handleKeyUp);
+    };
+  }, [key]);
+
   return (
     <ZoomWrapper x={-0.1} y={-0.1} z={-0.1}>
       <group name='Scene'>
-        <mesh
+        <animated.mesh
           name='plate'
           castShadow
           receiveShadow
@@ -24,14 +52,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.020' }}>
-          <mesh
+          <animated.mesh
             name='Cube070_1'
             castShadow
             receiveShadow
             geometry={nodes.Cube070_1.geometry}
             material={materials['switch bottom.001']}
           />
-          <mesh
+          <animated.mesh
             name='Cube070_2'
             castShadow
             receiveShadow
@@ -45,14 +73,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.021' }}>
-          <mesh
+          <animated.mesh
             name='Cube071_1'
             castShadow
             receiveShadow
             geometry={nodes.Cube071_1.geometry}
             material={materials['switch bottom.002']}
           />
-          <mesh
+          <animated.mesh
             name='Cube071_2'
             castShadow
             receiveShadow
@@ -66,14 +94,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.022' }}>
-          <mesh
+          <animated.mesh
             name='Cube072_1'
             castShadow
             receiveShadow
             geometry={nodes.Cube072_1.geometry}
             material={materials['switch bottom.003']}
           />
-          <mesh
+          <animated.mesh
             name='Cube072_2'
             castShadow
             receiveShadow
@@ -87,14 +115,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.023' }}>
-          <mesh
+          <animated.mesh
             name='Cube073_1'
             castShadow
             receiveShadow
             geometry={nodes.Cube073_1.geometry}
             material={materials['switch bottom.004']}
           />
-          <mesh
+          <animated.mesh
             name='Cube073_2'
             castShadow
             receiveShadow
@@ -108,14 +136,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.024' }}>
-          <mesh
+          <animated.mesh
             name='Cube074_1'
             castShadow
             receiveShadow
             geometry={nodes.Cube074_1.geometry}
             material={materials['switch bottom.005']}
           />
-          <mesh
+          <animated.mesh
             name='Cube074_2'
             castShadow
             receiveShadow
@@ -129,14 +157,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.025' }}>
-          <mesh
+          <animated.mesh
             name='Cube075_1'
             castShadow
             receiveShadow
             geometry={nodes.Cube075_1.geometry}
             material={materials['switch bottom.006']}
           />
-          <mesh
+          <animated.mesh
             name='Cube075_2'
             castShadow
             receiveShadow
@@ -150,14 +178,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.026' }}>
-          <mesh
+          <animated.mesh
             name='Cube076_1'
             castShadow
             receiveShadow
             geometry={nodes.Cube076_1.geometry}
             material={materials['switch bottom.007']}
           />
-          <mesh
+          <animated.mesh
             name='Cube076_2'
             castShadow
             receiveShadow
@@ -171,14 +199,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.019' }}>
-          <mesh
+          <animated.mesh
             name='Cube077_1'
             castShadow
             receiveShadow
             geometry={nodes.Cube077_1.geometry}
             material={materials['switch bottom.008']}
           />
-          <mesh
+          <animated.mesh
             name='Cube077_2'
             castShadow
             receiveShadow
@@ -192,14 +220,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.027' }}>
-          <mesh
+          <animated.mesh
             name='Cube078_1'
             castShadow
             receiveShadow
             geometry={nodes.Cube078_1.geometry}
             material={materials['switch bottom.009']}
           />
-          <mesh
+          <animated.mesh
             name='Cube078_2'
             castShadow
             receiveShadow
@@ -213,14 +241,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.028' }}>
-          <mesh
+          <animated.mesh
             name='Cube079_1'
             castShadow
             receiveShadow
             geometry={nodes.Cube079_1.geometry}
             material={materials['switch bottom.010']}
           />
-          <mesh
+          <animated.mesh
             name='Cube079_2'
             castShadow
             receiveShadow
@@ -234,14 +262,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.029' }}>
-          <mesh
+          <animated.mesh
             name='Cube080_1'
             castShadow
             receiveShadow
             geometry={nodes.Cube080_1.geometry}
             material={materials['switch bottom.011']}
           />
-          <mesh
+          <animated.mesh
             name='Cube080_2'
             castShadow
             receiveShadow
@@ -255,14 +283,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.030' }}>
-          <mesh
+          <animated.mesh
             name='Cube081'
             castShadow
             receiveShadow
             geometry={nodes.Cube081.geometry}
             material={materials['switch bottom.012']}
           />
-          <mesh
+          <animated.mesh
             name='Cube081_1'
             castShadow
             receiveShadow
@@ -276,14 +304,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.031' }}>
-          <mesh
+          <animated.mesh
             name='Cube082'
             castShadow
             receiveShadow
             geometry={nodes.Cube082.geometry}
             material={materials['switch bottom.013']}
           />
-          <mesh
+          <animated.mesh
             name='Cube082_1'
             castShadow
             receiveShadow
@@ -297,14 +325,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.032' }}>
-          <mesh
+          <animated.mesh
             name='Cube083'
             castShadow
             receiveShadow
             geometry={nodes.Cube083.geometry}
             material={materials['switch bottom.014']}
           />
-          <mesh
+          <animated.mesh
             name='Cube083_1'
             castShadow
             receiveShadow
@@ -318,14 +346,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.033' }}>
-          <mesh
+          <animated.mesh
             name='Cube084'
             castShadow
             receiveShadow
             geometry={nodes.Cube084.geometry}
             material={materials['switch bottom.015']}
           />
-          <mesh
+          <animated.mesh
             name='Cube084_1'
             castShadow
             receiveShadow
@@ -339,14 +367,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.034' }}>
-          <mesh
+          <animated.mesh
             name='Cube085'
             castShadow
             receiveShadow
             geometry={nodes.Cube085.geometry}
             material={materials['switch bottom.016']}
           />
-          <mesh
+          <animated.mesh
             name='Cube085_1'
             castShadow
             receiveShadow
@@ -360,14 +388,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.035' }}>
-          <mesh
+          <animated.mesh
             name='Cube086'
             castShadow
             receiveShadow
             geometry={nodes.Cube086.geometry}
             material={materials['switch bottom.017']}
           />
-          <mesh
+          <animated.mesh
             name='Cube086_1'
             castShadow
             receiveShadow
@@ -381,14 +409,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.036' }}>
-          <mesh
+          <animated.mesh
             name='Cube087'
             castShadow
             receiveShadow
             geometry={nodes.Cube087.geometry}
             material={materials['switch bottom.018']}
           />
-          <mesh
+          <animated.mesh
             name='Cube087_1'
             castShadow
             receiveShadow
@@ -402,14 +430,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.037' }}>
-          <mesh
+          <animated.mesh
             name='Cube088'
             castShadow
             receiveShadow
             geometry={nodes.Cube088.geometry}
             material={materials['switch bottom.019']}
           />
-          <mesh
+          <animated.mesh
             name='Cube088_1'
             castShadow
             receiveShadow
@@ -423,14 +451,14 @@ const Keyboard = (props) => {
           rotation={[-3.08923228, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.038' }}>
-          <mesh
+          <animated.mesh
             name='Cube024_1'
             castShadow
             receiveShadow
             geometry={nodes.Cube024_1.geometry}
             material={materials['switch bottom']}
           />
-          <mesh
+          <animated.mesh
             name='Cube024_2'
             castShadow
             receiveShadow
@@ -438,29 +466,32 @@ const Keyboard = (props) => {
             material={materials['switch']}
           />
         </group>
-        <mesh
-          name='Cube'
+        {/* //SECTION - Keys */}
+        <animated.mesh
+          name='Backquote'
+          ref={key.backquoteRef}
           castShadow
           receiveShadow
           geometry={nodes.Cube.geometry}
           material={materials['keycaps2.001']}
-          position={[-0.09729859, 0.00220405, -0.02940938]}
+          position={key.backquotePosition}
           rotation={[0.05235988, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube' }}
         />
-        <mesh
-          name='Cube001'
+        <animated.mesh
+          name='KeyA'
+          ref={key.keyARef}
           castShadow
           receiveShadow
           geometry={nodes.Cube001.geometry}
           material={materials['keycaps2.002']}
-          position={[-0.07229859, 0.00066014, 0.00005019]}
+          position={key.keyAPosition}
           rotation={[0.05235988, 0, 0]}
           scale={0.5}
           userData={{ name: 'Cube.001' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube002'
           castShadow
           receiveShadow
@@ -471,7 +502,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.002' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube003'
           castShadow
           receiveShadow
@@ -482,7 +513,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.003' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube004'
           castShadow
           receiveShadow
@@ -493,7 +524,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.004' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube005'
           castShadow
           receiveShadow
@@ -504,7 +535,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.005' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube006'
           castShadow
           receiveShadow
@@ -515,7 +546,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.006' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube007'
           castShadow
           receiveShadow
@@ -526,7 +557,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.007' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube008'
           castShadow
           receiveShadow
@@ -537,7 +568,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.008' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube009'
           castShadow
           receiveShadow
@@ -548,7 +579,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.009' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube010'
           castShadow
           receiveShadow
@@ -559,7 +590,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.010' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube011'
           castShadow
           receiveShadow
@@ -570,7 +601,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.011' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube012'
           castShadow
           receiveShadow
@@ -581,7 +612,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.012' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube013'
           castShadow
           receiveShadow
@@ -592,7 +623,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.013' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube014'
           castShadow
           receiveShadow
@@ -603,7 +634,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.014' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube015'
           castShadow
           receiveShadow
@@ -614,7 +645,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.015' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube016'
           castShadow
           receiveShadow
@@ -625,7 +656,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.016' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube017'
           castShadow
           receiveShadow
@@ -636,7 +667,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.017' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube018'
           castShadow
           receiveShadow
@@ -647,7 +678,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.018' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube039'
           castShadow
           receiveShadow
@@ -658,7 +689,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.039' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube040'
           castShadow
           receiveShadow
@@ -669,7 +700,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.040' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube041'
           castShadow
           receiveShadow
@@ -680,7 +711,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.041' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube042'
           castShadow
           receiveShadow
@@ -691,7 +722,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.042' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube043'
           castShadow
           receiveShadow
@@ -702,7 +733,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.043' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube044'
           castShadow
           receiveShadow
@@ -713,7 +744,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.044' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube045'
           castShadow
           receiveShadow
@@ -724,7 +755,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.045' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube046'
           castShadow
           receiveShadow
@@ -735,7 +766,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.046' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube047'
           castShadow
           receiveShadow
@@ -746,7 +777,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.047' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube048'
           castShadow
           receiveShadow
@@ -757,7 +788,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.048' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube049'
           castShadow
           receiveShadow
@@ -768,7 +799,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.049' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube050'
           castShadow
           receiveShadow
@@ -779,7 +810,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.050' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube051'
           castShadow
           receiveShadow
@@ -790,7 +821,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.051' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube052'
           castShadow
           receiveShadow
@@ -801,7 +832,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.052' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube053'
           castShadow
           receiveShadow
@@ -812,7 +843,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.053' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube054'
           castShadow
           receiveShadow
@@ -823,7 +854,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.054' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube055'
           castShadow
           receiveShadow
@@ -834,7 +865,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.055' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube056'
           castShadow
           receiveShadow
@@ -845,7 +876,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.056' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube057'
           castShadow
           receiveShadow
@@ -856,7 +887,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.057' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube058'
           castShadow
           receiveShadow
@@ -867,7 +898,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.058' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube059'
           castShadow
           receiveShadow
@@ -878,7 +909,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.059' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube060'
           castShadow
           receiveShadow
@@ -889,7 +920,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.060' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube061'
           castShadow
           receiveShadow
@@ -900,7 +931,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.061' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube062'
           castShadow
           receiveShadow
@@ -911,7 +942,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.062' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube063'
           castShadow
           receiveShadow
@@ -922,7 +953,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.063' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube064'
           castShadow
           receiveShadow
@@ -933,7 +964,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.064' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube065'
           castShadow
           receiveShadow
@@ -944,7 +975,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.065' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube066'
           castShadow
           receiveShadow
@@ -955,7 +986,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.066' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube067'
           castShadow
           receiveShadow
@@ -966,7 +997,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.067' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube068'
           castShadow
           receiveShadow
@@ -977,7 +1008,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.068' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube069'
           castShadow
           receiveShadow
@@ -988,7 +1019,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.069' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube070'
           castShadow
           receiveShadow
@@ -999,7 +1030,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.070' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube071'
           castShadow
           receiveShadow
@@ -1010,7 +1041,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.071' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube072'
           castShadow
           receiveShadow
@@ -1021,7 +1052,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.072' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube073'
           castShadow
           receiveShadow
@@ -1032,7 +1063,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.073' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube074'
           castShadow
           receiveShadow
@@ -1043,7 +1074,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.074' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube075'
           castShadow
           receiveShadow
@@ -1054,7 +1085,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.075' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube076'
           castShadow
           receiveShadow
@@ -1065,7 +1096,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.076' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube077'
           castShadow
           receiveShadow
@@ -1076,7 +1107,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.077' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube078'
           castShadow
           receiveShadow
@@ -1087,7 +1118,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.078' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube079'
           castShadow
           receiveShadow
@@ -1098,7 +1129,7 @@ const Keyboard = (props) => {
           scale={0.5}
           userData={{ name: 'Cube.079' }}
         />
-        <mesh
+        <animated.mesh
           name='Cube080'
           castShadow
           receiveShadow

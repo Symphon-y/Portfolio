@@ -14,6 +14,7 @@ import { Canvas, useThree } from '@react-three/fiber';
 import ClickToZoom from '../clickToZoom/ClickToZoom';
 import ZoomWrapper from '../zoom-wrapper/ZoomWrapper';
 import KeyboardTwo from '../keyboard/KeyboardTwo';
+import { KeyboardContextProvider } from '../../context/KeyboardContextProvider';
 
 const Experience = () => {
   return (
@@ -83,8 +84,11 @@ const Experience = () => {
               position={[-2, -1.55, 0.2]}
               scale={15}
               rotation-y={Math.PI * -0.25}>
-              <Keyboard />
+              <KeyboardContextProvider>
+                <Keyboard />
+              </KeyboardContextProvider>
             </mesh>
+
             {/* </ClickToZoom> */}
           </Float>
         </PresentationControls>
