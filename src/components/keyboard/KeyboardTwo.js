@@ -19,7 +19,6 @@ const Keyboard = (props) => {
     const handleKeyDown = (e) => {
       const keycode = e.code;
       const actualKey = e.key;
-      console.log(actualKey);
       if (keycode === 'Backspace') {
         const newText = text.slice(0, -1);
         setText(newText);
