@@ -13,7 +13,8 @@ const Iframe = ({ handleZoom, handleUnzoom }) => {
       className={'i-container'}
       onClick={() => {
         handleZoom('SCREEN');
-      }}>
+      }}
+      onPointerMissed={handleUnzoom}>
       <Header handleZoom={handleZoom} />
       <Contact handleZoom={handleZoom} />
       <Activities handleZoom={handleZoom} />
