@@ -1,15 +1,12 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useGLTF } from '@react-three/drei';
-import ZoomWrapper from '../Wrappers/zoom-wrapper/ZoomWrapper';
 import useZoom from '../../hooks/useZoom';
 const Coffee = () => {
-  const group = useRef();
   const { handleZoom, handleUnzoom } = useZoom();
-  const { nodes, materials } = useGLTF(
+  const { nodes } = useGLTF(
     'https://market-assets.fra1.cdn.digitaloceanspaces.com/market-assets/models/spilling-coffee/model.gltf'
   );
   return (
-    // <ZoomWrapper>
     <mesh
       onClick={() => handleZoom('COFFEE')}
       onPointerMissed={handleUnzoom}
@@ -27,7 +24,6 @@ const Coffee = () => {
         material-color={'#c2a289'}
       />
     </mesh>
-    // </ZoomWrapper>
   );
 };
 
