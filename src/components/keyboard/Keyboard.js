@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
-import ZoomWrapper from '../zoom-wrapper/ZoomWrapper';
+import ZoomWrapper from '../Wrappers/zoom-wrapper/ZoomWrapper';
 
 const Keyboard = (props) => {
   const group = useRef();

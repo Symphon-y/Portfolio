@@ -1,19 +1,14 @@
-import { useEffect, useState } from 'react';
 import {
   Text,
   Float,
   Environment,
   PresentationControls,
   ContactShadows,
-  Bounds,
 } from '@react-three/drei';
 import Laptop from '../laptop/Laptop';
 import Coffee from '../coffee/Coffee';
 import Keyboard from '../keyboard/KeyboardTwo';
-import { Canvas, useThree } from '@react-three/fiber';
-import ClickToZoom from '../clickToZoom/ClickToZoom';
-import ZoomWrapper from '../zoom-wrapper/ZoomWrapper';
-import KeyboardTwo from '../keyboard/KeyboardTwo';
+import { Canvas } from '@react-three/fiber';
 import { KeyboardContextProvider } from '../../context/KeyboardContextProvider';
 
 const Experience = () => {
@@ -35,7 +30,7 @@ const Experience = () => {
         <PresentationControls
           global
           rotation={[0.13, 0.5, 0]}
-          polar={[-0.4, 0.2]}
+          polar={[-0.25, 0.2]}
           azimuth={[-1, 0.75]}
           config={{ mass: 2, tension: 400 }}
           snap={{ mass: 4, tension: 400 }}
@@ -49,7 +44,7 @@ const Experience = () => {
               intensity={65}
               color={'#57cbff'}
               rotation={[-0.1, Math.PI, 0]}
-              position={[0, 0.55, -1.15]}
+              position={[0, 1.75, -1.15]}
             />
             {/* <ClickToZoom> */}
             <mesh position-y={-1.2} scale={1.25}>

@@ -1,11 +1,14 @@
 import React, { useRef, useEffect, useContext, useState } from 'react';
 import { Text, useGLTF, useAnimations } from '@react-three/drei';
-import ZoomWrapper from '../zoom-wrapper/ZoomWrapper';
-import { useSpring, animated, config } from '@react-spring/three';
+import { animated } from '@react-spring/three';
 import { KeyboardContext } from '../../context/KeyboardContext';
+import ZoomWrapper from '../Wrappers/zoom-wrapper/ZoomWrapper';
+import { POSITIONS, ROTATIONS } from '../../types/constants';
+import useZoom from '../../hooks/useZoom';
 
 const Keyboard = (props) => {
   const [text, setText] = useState('');
+  const { handleZoom, handleUnzoom } = useZoom();
 
   const key = useContext(KeyboardContext);
 
@@ -19,7 +22,6 @@ const Keyboard = (props) => {
     const handleKeyDown = (e) => {
       const keycode = e.code;
       const actualKey = e.key;
-      console.log(actualKey);
       if (keycode === 'Backspace') {
         const newText = text.slice(0, -1);
         setText(newText);
@@ -57,10 +59,13 @@ const Keyboard = (props) => {
   }, [key, text]);
 
   return (
-    //FIXME - ZoomWrapper useFrame causing unintended camera movement on keycode
-    // <ZoomWrapper x={-0.1} y={-0.1} z={-0.1}>
     <>
-      <group ref={group} {...props} dispose={null}>
+      <group
+        onClick={() => handleZoom('KEYBOARD')}
+        onPointerMissed={handleUnzoom}
+        ref={group}
+        {...props}
+        dispose={null}>
         <group name='Scene'>
           <animated.mesh
             name='plate'
@@ -1243,7 +1248,6 @@ const Keyboard = (props) => {
         {`${text}`}
       </Text>
     </>
-    //</ZoomWrapper>
   );
 };
 
