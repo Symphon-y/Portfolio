@@ -1,4 +1,4 @@
-const Header = () => {
+const Header = ({ handleZoom }) => {
   const style = {
     display: 'flex',
     'max-width': '600px',
@@ -9,6 +9,9 @@ const Header = () => {
 
   return (
     <div
+      onClick={() => {
+        handleZoom('SCREEN');
+      }}
       className='intro-container'
       style={{
         display: 'flex',

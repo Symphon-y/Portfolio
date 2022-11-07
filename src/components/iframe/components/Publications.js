@@ -1,6 +1,10 @@
-const Publications = () => {
+const Publications = ({ handleZoom }) => {
   return (
-    <div class='section publications'>
+    <div
+      onClick={() => {
+        handleZoom('SCREEN');
+      }}
+      class='section publications'>
       <h1 class='title subheading publication-title'>PUBLICATIONS</h1>
       <div class='article-container'>
         <a

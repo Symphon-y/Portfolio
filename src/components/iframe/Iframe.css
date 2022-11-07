@@ -118,6 +118,7 @@
 }
 
 .i-container {
+  cursor: zoom-in;
   top: 0;
   left: 0;
   height: 685px;

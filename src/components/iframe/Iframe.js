@@ -13,14 +13,13 @@ const Iframe = ({ handleZoom, handleUnzoom }) => {
       className={'i-container'}
       onClick={() => {
         handleZoom('SCREEN');
-      }}
-      onPointerMissed={() => handleUnzoom()}>
-      <Header />
-      <Contact />
-      <Activities />
-      <Projects />
-      <Publications />
-      <Education />
+      }}>
+      <Header handleZoom={handleZoom} />
+      <Contact handleZoom={handleZoom} />
+      <Activities handleZoom={handleZoom} />
+      <Projects handleZoom={handleZoom} />
+      <Publications handleZoom={handleZoom} />
+      <Education handleZoom={handleZoom} />
     </div>
   );
 };

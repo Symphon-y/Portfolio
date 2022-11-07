@@ -59,11 +59,7 @@ const Keyboard = (props) => {
   }, [key, text]);
 
   return (
-    //FIXME - ZoomWrapper useFrame causing unintended camera movement on keycode
     <>
-      {/* <ZoomWrapper
-        targetPosition={POSITIONS.KEYBOARD}
-        targetRotation={ROTATIONS.KEYBOARD}> */}
       <group
         onClick={() => handleZoom('KEYBOARD')}
         onPointerMissed={handleUnzoom}
@@ -1236,7 +1232,6 @@ const Keyboard = (props) => {
           />
         </group>
       </group>
-      {/* </ZoomWrapper> */}
       <Text
         font='./bangers-v20-latin/bangers-v20-latin-regular.ttf'
         fontSize={0.02}
