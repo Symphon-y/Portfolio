@@ -1,19 +1,14 @@
-import { useEffect, useState } from 'react';
 import {
   Text,
   Float,
   Environment,
   PresentationControls,
   ContactShadows,
-  Bounds,
 } from '@react-three/drei';
 import Laptop from '../laptop/Laptop';
 import Coffee from '../coffee/Coffee';
 import Keyboard from '../keyboard/KeyboardTwo';
-import { Canvas, useThree } from '@react-three/fiber';
-import ClickToZoom from '../clickToZoom/ClickToZoom';
-import ZoomWrapper from '../zoom-wrapper/ZoomWrapper';
-import KeyboardTwo from '../keyboard/KeyboardTwo';
+import { Canvas } from '@react-three/fiber';
 import { KeyboardContextProvider } from '../../context/KeyboardContextProvider';
 
 const Experience = () => {
