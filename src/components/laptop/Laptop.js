@@ -1,20 +1,13 @@
-import React, { useRef } from 'react';
-import { Html, useGLTF, useBounds } from '@react-three/drei';
-import ZoomWrapper from '../Wrappers/zoom-wrapper/ZoomWrapper';
+import React from 'react';
+import { Html, useGLTF } from '@react-three/drei';
 import Iframe from '../iframe/Iframe';
-import { POSITIONS, ROTATIONS } from '../../types/constants';
 import useZoom from '../../hooks/useZoom';
 
 const Laptop = (props) => {
   const { handleZoom, handleUnzoom } = useZoom();
-  const bounds = useBounds();
-
-  // const [contentRef, setContentRef] = useState(null);
-  const group = useRef();
   const { nodes, materials } = useGLTF(
     'https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf'
   );
-  // const mountNode = contentRef?.contentWindow?.document?.body;
 
   return (
     <>
