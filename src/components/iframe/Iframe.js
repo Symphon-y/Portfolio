@@ -10,17 +10,15 @@ import './Iframe.css';
 const Iframe = ({ handleZoom, handleUnzoom }) => {
   return (
     <div
-      className={'i-container'}
-      onClick={() => {
-        handleZoom('SCREEN');
-      }}
-      onPointerMissed={handleUnzoom}>
-      <Header handleZoom={handleZoom} />
-      <Contact handleZoom={handleZoom} />
-      <Activities handleZoom={handleZoom} />
-      <Projects handleZoom={handleZoom} />
-      <Publications handleZoom={handleZoom} />
-      <Education handleZoom={handleZoom} />
+      onClick={() => handleZoom('SCREEN')}
+      onPointerMissed={() => handleUnzoom()}
+      className={'i-container'}>
+      <Header />
+      <Contact />
+      <Activities />
+      <Projects />
+      <Publications />
+      <Education />
     </div>
   );
 };

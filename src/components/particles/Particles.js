@@ -18,7 +18,7 @@ export default function Particles({ count, mouse }) {
       const speed = 0 + Math.random() / 10000;
       const xFactor = -50 + Math.random() * 100;
       const yFactor = -50 + Math.random() * 100;
-      const zFactor = -50 + Math.random() * 100;
+      const zFactor = -110 + Math.random() * 100;
       temp.push({ t, factor, speed, xFactor, yFactor, zFactor, mx: 0, my: 0 });
     }
     return temp;
@@ -66,7 +66,7 @@ export default function Particles({ count, mouse }) {
   });
   return (
     <>
-      <pointLight ref={light} distance={40} intensity={8} color='lightblue' />
+      <pointLight ref={light} distance={90} intensity={8} color='lightblue' />
       <instancedMesh ref={mesh} args={[null, null, count]}>
         <dodecahedronGeometry args={[0.2, 1]} />
         <meshPhongMaterial color='#050505' />

@@ -4,7 +4,7 @@ import { POSITIONS, ROTATIONS } from '../types/constants';
 import * as TWEEN from '@tweenjs/tween.js';
 
 const useZoom = () => {
-  const [activeObject, setActiveObject] = useState('DEFAULT_CAMERA');
+  const [activeObject, setActiveObject] = useState();
   const camera = useThree((state) => state.camera);
 
   useFrame(() => {

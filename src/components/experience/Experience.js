@@ -10,11 +10,11 @@ import Coffee from '../coffee/Coffee';
 import Keyboard from '../keyboard/KeyboardTwo';
 import { Canvas } from '@react-three/fiber';
 import { KeyboardContextProvider } from '../../context/KeyboardContextProvider';
-import Skybox from '../skybox/Skybox';
 import Particles from '../particles/Particles';
 import { useRef } from 'react';
-import Effects from '../effects/Effects';
-import Astronaught from '../astronaught/Astronaught';
+import Iphone from '../iphone/Iphone';
+import Shoe from '../shoe/Shoe';
+import Supernova from '../project-supernova/supernova';
 
 const Experience = () => {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -23,11 +23,14 @@ const Experience = () => {
   return (
     <>
       <Canvas>
+        <Particles count={isMobile ? 5000 : 10000} mouse={mouse} />
+
         {/* Sets the Background Color of the scene */}
         <color args={['#151515']} attach='background' />
         {/* Sets the default Lighting settings for the scene */}
         {/* <Skybox /> */}
         <Environment preset='city' />
+
         {/* Sets the camera controls,
         global allows grabbing from anywhere in the scene
         rotation sets the default rotation parameters
@@ -45,7 +48,7 @@ const Experience = () => {
           snap={{ mass: 4, tension: 400 }}
           makeDefault>
           {/* Adds a float animation */}
-          <Float rotationIntensity={0.4}>
+          <Float rotationIntensity={0.17}>
             {/* Adds screen light */}
             <rectAreaLight
               width={2.5}
@@ -93,8 +96,8 @@ const Experience = () => {
               </KeyboardContextProvider>
             </mesh>
             {/* </ClickToZoom> */}
-          </Float>
-          {/* <Float rotationIntensity={0.25}>
+
+            {/* <Float rotationIntensity={0.25}>
             <mesh
               position={[35, 10, -15]}
               scale={1.25}
@@ -102,24 +105,51 @@ const Experience = () => {
               rotation-y={Math.PI * -0.25}
               rotation-z={Math.PI * 0.25}>
               <Astronaught />
+
             </mesh>
           </Float> */}
+            <pointLight
+              position={[2, -3, 2]}
+              distance={100}
+              intensity={3}
+              color='blue'
+            />
+            <pointLight
+              position={[-1, 1, 2]}
+              distance={100}
+              intensity={2}
+              color='red'
+            />
+
+            <mesh
+              position={[-4, -0.5, 0]}
+              scale={0.25}
+              rotation-y={Math.PI * 0.3}
+              rotation-x={Math.PI * -0.25}
+              rotation-z={Math.PI * 0.15}>
+              <Iphone />
+            </mesh>
+            <mesh
+              position={[-4.2, -0.75, -5]}
+              scale={0.45}
+              rotation-y={Math.PI * 0.75}
+              rotation-x={Math.PI * -0.25}
+              rotation-z={Math.PI * 0.15}>
+              <Shoe />
+            </mesh>
+            <mesh
+              position={[-11.26, 1.0, -25]}
+              scale={0.1}
+              rotation-y={Math.PI * 0.75}
+              rotation-x={Math.PI * -0.25}
+              rotation-z={Math.PI * 0.15}>
+              <Supernova />
+            </mesh>
+          </Float>
         </PresentationControls>
         {/* </Bounds> */}
         {/* Adds default shadows to the scene */}
-        {/* <pointLight
-          position={[2, -3, 2]}
-          distance={100}
-          intensity={3}
-          color='blue'
-        />
-        <pointLight
-          position={[-1, 1, 2]}
-          distance={100}
-          intensity={2}
-          color='red'
-        /> */}
-        <Particles count={isMobile ? 5000 : 10000} mouse={mouse} />
+
         <ContactShadows position-y={-1.4} opacity={0.4} scale={7} blur={2.4} />
       </Canvas>
     </>

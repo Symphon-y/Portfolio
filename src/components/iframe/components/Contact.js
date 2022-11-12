@@ -1,10 +1,6 @@
-const Contact = ({ handleZoom }) => {
+const Contact = () => {
   return (
-    <div
-      onClick={() => {
-        handleZoom('SCREEN');
-      }}
-      class='section contact'>
+    <div class='section contact'>
       <h1 class='title subheading'>CONTACT</h1>
       <div class='list contact'>
         <a

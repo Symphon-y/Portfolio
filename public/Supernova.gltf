@@ -1,0 +1,50 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v3.3.32",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                1,
+                3,
+                4
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "name" : "Geode"
+        },
+        {
+            "children" : [
+                0
+            ],
+            "name" : "Sketchfab_model",
+            "translation" : [
+                0,
+                0.013648033142089844,
+                0.05289626121520996
+            ]
+        },
+        {
+            "name" : "Geode.001"
+        },
+        {
+            "children" : [
+                2
+            ],
+            "name" : "Sketchfab_model.001",
+            "translation" : [
+                0,
+                0.013648033142089844,
+                0.05289626121520996
+            ]
+        },
+        {
+            "name" : "Nebula"
+        }
+    ]
+}
