@@ -1,35 +1,54 @@
-import * as THREE from 'three';
-import React, { useRef, useMemo, useEffect } from 'react';
-import { extend, useThree, useFrame } from '@react-three/fiber';
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
-import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
-import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass';
-import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass';
-// import { WaterPass } from './waterpass/Waterpass';
+// import { useLoader } from '@react-three/fiber';
+import { EffectComposer, SSR, Bloom, LUT } from '@react-three/postprocessing';
+import { useControls } from 'leva';
+// import { LUTCubeLoader } from 'postprocessing';
 
-extend({
-  EffectComposer,
-  ShaderPass,
-  RenderPass,
-  UnrealBloomPass,
-  FilmPass,
-});
-
-export default function Effects() {
-  const composer = useRef();
-  const { scene, gl, size, camera } = useThree();
-  const aspect = useMemo(() => new THREE.Vector2(512, 512), []);
-  useEffect(
-    () => void composer.current.setSize(size.width, size.height),
-    [size]
-  );
-  useFrame(() => composer.current.render(), 1);
+export function Effects() {
+  // const texture = useLoader(LUTCubeLoader, '/F-6800-STD.cube');
+  const { enabled, ...props } = useControls({
+    enabled: true,
+    temporalResolve: true,
+    STRETCH_MISSED_RAYS: true,
+    USE_MRT: true,
+    USE_NORMALMAP: true,
+    USE_ROUGHNESSMAP: true,
+    ENABLE_JITTERING: true,
+    ENABLE_BLUR: true,
+    DITHERING: false,
+    temporalResolveMix: { value: 0.9, min: 0, max: 1 },
+    temporalResolveCorrectionMix: { value: 0.4, min: 0, max: 1 },
+    maxSamples: { value: 0, min: 0, max: 1 },
+    resolutionScale: { value: 1, min: 0, max: 1 },
+    blurMix: { value: 0.2, min: 0, max: 1 },
+    blurKernelSize: { value: 8, min: 0, max: 8 },
+    BLUR_EXPONENT: { value: 10, min: 0, max: 20 },
+    rayStep: { value: 0.5, min: 0, max: 1 },
+    intensity: { value: 2.5, min: 0, max: 5 },
+    maxRoughness: { value: 1, min: 0, max: 1 },
+    jitter: { value: 0.3, min: 0, max: 5 },
+    jitterSpread: { value: 0.25, min: 0, max: 1 },
+    jitterRough: { value: 0.1, min: 0, max: 1 },
+    roughnessFadeOut: { value: 1, min: 0, max: 1 },
+    rayFadeOut: { value: 0, min: 0, max: 1 },
+    MAX_STEPS: { value: 20, min: 0, max: 20 },
+    NUM_BINARY_SEARCH_STEPS: { value: 6, min: 0, max: 10 },
+    maxDepthDifference: { value: 5, min: 0, max: 10 },
+    maxDepth: { value: 1, min: 0, max: 1 },
+    thickness: { value: 3, min: 0, max: 10 },
+    ior: { value: 1.45, min: 0, max: 2 },
+  });
   return (
-    <effectComposer ref={composer} args={[gl]}>
-      <renderPass attachArray='passes' scene={scene} camera={camera} />
-      {/* <waterPass attachArray='passes' factor={1.5} /> */}
-      <unrealBloomPass attachArray='passes' args={[aspect, 2, 1, 0]} />
-    </effectComposer>
+    enabled && (
+      <EffectComposer disableNormalPass>
+        <SSR {...props} />
+        <Bloom
+          luminanceThreshold={0.2}
+          mipmapBlur
+          luminanceSmoothing={0}
+          intensity={1.75}
+        />
+        {/* <LUT lut={texture} /> */}
+      </EffectComposer>
+    )
   );
 }

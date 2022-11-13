@@ -4,6 +4,9 @@ import {
   Environment,
   PresentationControls,
   ContactShadows,
+  RandomizedLight,
+  Html,
+  Lightformer,
 } from '@react-three/drei';
 import Laptop from '../laptop/Laptop';
 import Coffee from '../coffee/Coffee';
@@ -15,6 +18,10 @@ import { useRef } from 'react';
 import Iphone from '../iphone/Iphone';
 import Shoe from '../shoe/Shoe';
 import Supernova from '../project-supernova/supernova';
+import Iframe from '../iframe/Iframe';
+import { Effects } from '../effects/Effects';
+import Astronaught from '../astronaught/Astronaught';
+import SolarSystem from '../solarsystem/SolarSystem';
 
 const Experience = () => {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -27,10 +34,17 @@ const Experience = () => {
 
         {/* Sets the Background Color of the scene */}
         <color args={['#151515']} attach='background' />
+        <RandomizedLight
+          amount={8}
+          radius={5}
+          ambient={0.5}
+          position={[5, 3, 2]}
+          bias={0.001}
+        />
+
         {/* Sets the default Lighting settings for the scene */}
         {/* <Skybox /> */}
         <Environment preset='city' />
-
         {/* Sets the camera controls,
         global allows grabbing from anywhere in the scene
         rotation sets the default rotation parameters
@@ -145,11 +159,27 @@ const Experience = () => {
               rotation-z={Math.PI * 0.15}>
               <Supernova />
             </mesh>
+            <mesh
+              position={[19.5, 5.5, -5]}
+              scale={1}
+              rotation-y={Math.PI * -0.33}
+              rotation-x={Math.PI * 0.28}
+              rotation-z={Math.PI * 0.4}>
+              <Astronaught />
+            </mesh>
+            {/* <mesh
+              position={[19.5, 5.5, 90]}
+              scale={1}
+              rotation-y={Math.PI * -0.33}
+              rotation-x={Math.PI * 0.28}
+              rotation-z={Math.PI * 0.4}>
+              <SolarSystem />
+            </mesh> */}
           </Float>
         </PresentationControls>
         {/* </Bounds> */}
         {/* Adds default shadows to the scene */}
-
+        {/* <Effects /> */}
         <ContactShadows position-y={-1.4} opacity={0.4} scale={7} blur={2.4} />
       </Canvas>
     </>

@@ -4,7 +4,7 @@ import Iframe from '../iframe/Iframe';
 import useZoom from '../../hooks/useZoom';
 
 const Laptop = (props) => {
-  const { handleZoom, handleUnzoom } = useZoom();
+  const { activeObject, handleZoom, handleUnzoom } = useZoom();
 
   const { nodes, materials } = useGLTF(
     'https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf'
@@ -183,7 +183,11 @@ const Laptop = (props) => {
         position={[0, 1.5, -1.4]}
         rotation-x={-0.256}>
         {/* <iframe title='iframe' src='http://www.TravisRedden.com:3006' /> */}
-        <Iframe handleZoom={handleZoom} handleUnzoom={handleUnzoom} />
+        <Iframe
+          activeObject={activeObject}
+          handleZoom={handleZoom}
+          handleUnzoom={handleUnzoom}
+        />
       </Html>
     </>
   );

@@ -1,24 +1,26 @@
 const Activities = () => {
   return (
-    <div class='section activities-container'>
-      <h1 class='title subheading activities'>ACTIVITIES</h1>
-      <div class='list'>
-        <div class='item'>
-          <div class='name'>FREELANCER</div>
-          <div class='period'>
-            <span class='date'>2022</span> <span class='arrow'>&gt;</span>
-            <span class='date'>TODAY</span>
+    <div className='section activities-container'>
+      <h1 className='title subheading activities'>ACTIVITIES</h1>
+      <div className='list'>
+        <div className='item'>
+          <div className='name'>FREELANCER</div>
+          <div className='period'>
+            <span className='date'>2022</span>{' '}
+            <span className='arrow'>&gt;</span>
+            <span className='date'>TODAY</span>
           </div>
         </div>
       </div>
-      <div class='list'>
-        <div class='item'>
-          <div class='name'>
-            SOFTWARE ENGINEER <span class='fade'>IN</span> WEB DEVELOPMENT
+      <div className='list'>
+        <div className='item'>
+          <div className='name'>
+            SOFTWARE ENGINEER <span className='fade'>IN</span> WEB DEVELOPMENT
           </div>
-          <div class='period'>
-            <span class='date'>2022</span> <span class='arrow'>&gt;</span>
-            <span class='date'>TODAY</span>
+          <div className='period'>
+            <span className='date'>2022</span>{' '}
+            <span className='arrow'>&gt;</span>
+            <span className='date'>TODAY</span>
           </div>
         </div>
       </div>

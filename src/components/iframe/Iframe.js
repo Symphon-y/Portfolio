@@ -6,12 +6,23 @@ import Publications from './components/Publications';
 import Education from './components/Education';
 
 import './Iframe.css';
+import { useState } from 'react';
 
-const Iframe = ({ handleZoom, handleUnzoom }) => {
+const Iframe = ({ activeObject, handleZoom, handleUnzoom }) => {
+  const [clicked, setClicked] = useState(false);
   return (
     <div
-      onClick={() => handleZoom('SCREEN')}
-      onPointerMissed={() => handleUnzoom()}
+      onClick={(e) => {
+        console.log(activeObject);
+        e.stopPropagation();
+        if (!clicked) {
+          handleZoom('SCREEN');
+          setClicked(!clicked);
+        } else {
+          handleUnzoom();
+          setClicked(!clicked);
+        }
+      }}
       className={'i-container'}>
       <Header />
       <Contact />
