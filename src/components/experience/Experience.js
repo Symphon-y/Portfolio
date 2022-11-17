@@ -5,8 +5,6 @@ import {
   PresentationControls,
   ContactShadows,
   RandomizedLight,
-  Html,
-  Lightformer,
 } from '@react-three/drei';
 import Laptop from '../laptop/Laptop';
 import Coffee from '../coffee/Coffee';
@@ -18,20 +16,20 @@ import { useRef } from 'react';
 import Iphone from '../iphone/Iphone';
 import Shoe from '../shoe/Shoe';
 import Supernova from '../project-supernova/supernova';
-import Iframe from '../iframe/Iframe';
-import { Effects } from '../effects/Effects';
 import Astronaught from '../astronaught/Astronaught';
-import SolarSystem from '../solarsystem/SolarSystem';
+import useWindowDimensions from '../../hooks/useWindowDiminsions';
 
 const Experience = () => {
+  const { width } = useWindowDimensions();
+
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   const mouse = useRef([0, 0]);
 
   return (
     <>
       <Canvas>
+        {/* Adds Fake Stars to Background */}
         <Particles count={isMobile ? 5000 : 10000} mouse={mouse} />
-
         {/* Sets the Background Color of the scene */}
         <color args={['#151515']} attach='background' />
         <RandomizedLight
@@ -41,7 +39,6 @@ const Experience = () => {
           position={[5, 3, 2]}
           bias={0.001}
         />
-
         {/* Sets the default Lighting settings for the scene */}
         {/* <Skybox /> */}
         <Environment preset='city' />
@@ -95,12 +92,6 @@ const Experience = () => {
               <Coffee />
             </mesh>
             {/* Adds Keyboard Mesh */}
-            {/* <mesh
-              position={[-1.25, -2, -0.75]}
-              scale={1}
-              rotation-y={Math.PI * -0.25}>
-              <Keyboard />
-            </mesh> */}
             <mesh
               position={[-2, -1.55, 0.2]}
               scale={15}
@@ -109,19 +100,7 @@ const Experience = () => {
                 <Keyboard />
               </KeyboardContextProvider>
             </mesh>
-            {/* </ClickToZoom> */}
 
-            {/* <Float rotationIntensity={0.25}>
-            <mesh
-              position={[35, 10, -15]}
-              scale={1.25}
-              // rotation-y={Math.PI * -0.25}
-              rotation-y={Math.PI * -0.25}
-              rotation-z={Math.PI * 0.25}>
-              <Astronaught />
-
-            </mesh>
-          </Float> */}
             <pointLight
               position={[2, -3, 2]}
               distance={100}
@@ -167,19 +146,9 @@ const Experience = () => {
               rotation-z={Math.PI * 0.4}>
               <Astronaught />
             </mesh>
-            {/* <mesh
-              position={[19.5, 5.5, 90]}
-              scale={1}
-              rotation-y={Math.PI * -0.33}
-              rotation-x={Math.PI * 0.28}
-              rotation-z={Math.PI * 0.4}>
-              <SolarSystem />
-            </mesh> */}
           </Float>
         </PresentationControls>
-        {/* </Bounds> */}
         {/* Adds default shadows to the scene */}
-        {/* <Effects /> */}
         <ContactShadows position-y={-1.4} opacity={0.4} scale={7} blur={2.4} />
       </Canvas>
     </>
