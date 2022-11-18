@@ -6,6 +6,8 @@ import React, { useRef, useState } from 'react';
 import { useGLTF, Text } from '@react-three/drei';
 import useZoom from '../../hooks/useZoom';
 import Iframe from '../iframe/Iframe';
+import Header from '../description/header';
+import Body from '../description/body';
 
 const Iphone = (props) => {
   const [clicked, isClicked] = useState(false);
@@ -135,57 +137,7 @@ const Iphone = (props) => {
         </group>
         <mesh
           geometry={nodes.SCREEN.geometry}
-          material={materials['Display.002']}>
-          {clicked && (
-            <>
-              {' '}
-              <Text
-                font='./bangers-v20-latin/bangers-v20-latin-regular.ttf'
-                fontSize={0.4}
-                position={[3.4, 0.75, 1]}
-                rotation-y={0}
-                rotation-x={0}
-                rotation-z={0.1}
-                maxWidth={7}
-                textAlign='left'>
-                Full Stack Engineer | Supernova
-              </Text>
-              <Text
-                font='./bangers-v20-latin/bangers-v20-latin-regular.ttf'
-                fontSize={0.2}
-                position={[3.67, 0.3, 1]}
-                rotation-y={0}
-                rotation-x={0}
-                rotation-z={0.1}
-                maxWidth={5}
-                textAlign='left'>
-                Technologies: PostgreSQL | NginX | Express | K6 | Loader.io |
-                AWS | Javascript
-              </Text>
-              <Text
-                font='./bangers-v20-latin/bangers-v20-latin-regular.ttf'
-                fontSize={0.2}
-                position={[3.82, -1, 1]}
-                rotation-y={0}
-                rotation-x={0}
-                rotation-z={0.1}
-                maxWidth={5}
-                textAlign='left'>
-                I had the privilege of working on a team that was tasked with
-                the design, implementation and optimization of the backend
-                server and database for a client’s retail product page. Our
-                primary objectives were to design our queries in such a way that
-                they were performant and had data output which matched the
-                structure received from the client’s legacy code. • Designed
-                nested queries, index, and structured the data into the
-                requested structure. • Deployed multiple server instances behind
-                a load balancer. • Optimized throughput and scaled API from 100
-                requests per second to 1000 requests per second with a response
-                time under 5 milliseconds and a zero percent error rate.
-              </Text>
-            </>
-          )}
-        </mesh>
+          material={materials['Display.002']}></mesh>
         <mesh
           geometry={nodes.VolumeButtons001.geometry}
           material={nodes.VolumeButtons001.material}
@@ -202,6 +154,26 @@ const Iphone = (props) => {
           />
         </group>
       </group>
+      {clicked && (
+        <>
+          {' '}
+          <Header>Lingo Lingo</Header>
+          <Body>
+            An online language exchange platform consisting of a forum, chat
+            feature, and event scheduler. ● Lead a team of eight engineers.
+            Organized and officiated daily stand-ups, maintained trello
+            ticketing system, and ensured the execution of a unified project
+            vision. ● Organized front end codebase with React while maintaining
+            a structured separation of concerns between components. ● Created
+            dynamic header with content filtering feature in React to facilitate
+            the users ability to search forum cards. ● Constructed sidebar with
+            React consisting of drop down menus and dynamic links to provide
+            website navigation. ● Designed wireframe and mockup in figma in
+            order to facilitate the implementation of front end styling
+            conventions
+          </Body>
+        </>
+      )}
     </group>
   );
 };

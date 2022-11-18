@@ -18,12 +18,18 @@ import Shoe from '../shoe/Shoe';
 import Supernova from '../project-supernova/supernova';
 import Astronaught from '../astronaught/Astronaught';
 import useWindowDimensions from '../../hooks/useWindowDiminsions';
+import {
+  DepthOfField,
+  EffectComposer,
+  Vignette,
+} from '@react-three/postprocessing';
 
 const Experience = () => {
-  const { width } = useWindowDimensions();
+  const { width, height } = useWindowDimensions();
 
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   const mouse = useRef([0, 0]);
+  const ref = useRef();
 
   return (
     <>
