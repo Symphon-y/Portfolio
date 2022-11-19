@@ -1,36 +1,32 @@
-const Education = ({ handleZoom }) => {
+const Education = () => {
   return (
-    <div
-      onClick={() => {
-        handleZoom('SCREEN');
-      }}
-      class='section section-education'>
-      <h1 class='title subheading education'>EDUCATION</h1>
-      <div class='list'>
-        <div class='projects-container'>
+    <div className='section section-education'>
+      <h1 className='title subheading education'>EDUCATION</h1>
+      <div className='list'>
+        <div className='projects-container'>
           <a
-            class='button'
+            className='button'
             href='https://www.hackreactor.com/coding-bootcamp'
             target='_blank'
             rel='noreferrer'>
-            <span class='border'></span>{' '}
-            <span class='label'>Hack Reactor '22</span>
+            <span className='border'></span>{' '}
+            <span className='label'>Hack Reactor '22</span>
           </a>
           <a
-            class='button'
+            className='button'
             href='https:www.shsu.edu'
             target='_blank'
             rel='noreferrer'>
-            <span class='border'></span>
-            <span class='label'>SHSU | Masters '21</span>
+            <span className='border'></span>
+            <span className='label'>SHSU | Masters '21</span>
           </a>
           <a
-            class='button'
+            className='button'
             href='https:www.shsu.edu'
             target='_blank'
             rel='noreferrer'>
-            <span class='border'></span>
-            <span class='label'>SHSU | Bachelors '20</span>
+            <span className='border'></span>
+            <span className='label'>SHSU | Bachelors '20</span>
           </a>
         </div>
       </div>

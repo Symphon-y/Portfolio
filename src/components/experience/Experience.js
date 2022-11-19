@@ -4,20 +4,49 @@ import {
   Environment,
   PresentationControls,
   ContactShadows,
+  RandomizedLight,
 } from '@react-three/drei';
 import Laptop from '../laptop/Laptop';
 import Coffee from '../coffee/Coffee';
 import Keyboard from '../keyboard/KeyboardTwo';
 import { Canvas } from '@react-three/fiber';
 import { KeyboardContextProvider } from '../../context/KeyboardContextProvider';
+import Particles from '../particles/Particles';
+import { useRef } from 'react';
+import Iphone from '../iphone/Iphone';
+import Shoe from '../shoe/Shoe';
+import Supernova from '../project-supernova/supernova';
+import Astronaught from '../astronaught/Astronaught';
+import useWindowDimensions from '../../hooks/useWindowDiminsions';
+import {
+  DepthOfField,
+  EffectComposer,
+  Vignette,
+} from '@react-three/postprocessing';
 
 const Experience = () => {
+  const { width, height } = useWindowDimensions();
+
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  const mouse = useRef([0, 0]);
+  const ref = useRef();
+
   return (
     <>
       <Canvas>
+        {/* Adds Fake Stars to Background */}
+        <Particles count={isMobile ? 5000 : 10000} mouse={mouse} />
         {/* Sets the Background Color of the scene */}
-        <color args={['#695b5b']} attach='background' />
+        <color args={['#151515']} attach='background' />
+        <RandomizedLight
+          amount={8}
+          radius={5}
+          ambient={0.5}
+          position={[5, 3, 2]}
+          bias={0.001}
+        />
         {/* Sets the default Lighting settings for the scene */}
+        {/* <Skybox /> */}
         <Environment preset='city' />
         {/* Sets the camera controls,
         global allows grabbing from anywhere in the scene
@@ -36,7 +65,7 @@ const Experience = () => {
           snap={{ mass: 4, tension: 400 }}
           makeDefault>
           {/* Adds a float animation */}
-          <Float rotationIntensity={0.4}>
+          <Float rotationIntensity={0.17}>
             {/* Adds screen light */}
             <rectAreaLight
               width={2.5}
@@ -69,12 +98,6 @@ const Experience = () => {
               <Coffee />
             </mesh>
             {/* Adds Keyboard Mesh */}
-            {/* <mesh
-              position={[-1.25, -2, -0.75]}
-              scale={1}
-              rotation-y={Math.PI * -0.25}>
-              <Keyboard />
-            </mesh> */}
             <mesh
               position={[-2, -1.55, 0.2]}
               scale={15}
@@ -84,10 +107,53 @@ const Experience = () => {
               </KeyboardContextProvider>
             </mesh>
 
-            {/* </ClickToZoom> */}
+            <pointLight
+              position={[2, -3, 2]}
+              distance={100}
+              intensity={3}
+              color='blue'
+            />
+            <pointLight
+              position={[-1, 1, 2]}
+              distance={100}
+              intensity={2}
+              color='red'
+            />
+
+            <mesh
+              position={[-4, -0.5, 0]}
+              scale={0.25}
+              rotation-y={Math.PI * 0.3}
+              rotation-x={Math.PI * -0.25}
+              rotation-z={Math.PI * 0.15}>
+              <Iphone />
+            </mesh>
+            <mesh
+              position={[-4.2, -0.75, -5]}
+              scale={0.45}
+              rotation-y={Math.PI * 0.75}
+              rotation-x={Math.PI * -0.25}
+              rotation-z={Math.PI * 0.15}>
+              <Shoe />
+            </mesh>
+            <mesh
+              position={[-11.26, 1.0, -25]}
+              scale={0.1}
+              rotation-y={Math.PI * 0.75}
+              rotation-x={Math.PI * -0.25}
+              rotation-z={Math.PI * 0.15}>
+              <Supernova />
+            </mesh>
+            <mesh
+              position={[19.5, 5.5, -5]}
+              scale={1}
+              rotation-y={Math.PI * -0.33}
+              rotation-x={Math.PI * 0.28}
+              rotation-z={Math.PI * 0.4}>
+              <Astronaught />
+            </mesh>
           </Float>
         </PresentationControls>
-        {/* </Bounds> */}
         {/* Adds default shadows to the scene */}
         <ContactShadows position-y={-1.4} opacity={0.4} scale={7} blur={2.4} />
       </Canvas>

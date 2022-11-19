@@ -1,37 +1,9 @@
-const Header = ({ handleZoom }) => {
-  const style = {
-    display: 'flex',
-    'max-width': '600px',
-    'flex-direction': 'column',
-    'align-items': 'flex-start',
-    'justify-content': 'flex-start',
-  };
-
+const Header = () => {
   return (
-    <div
-      onClick={() => {
-        handleZoom('SCREEN');
-      }}
-      className='intro-container'
-      style={{
-        display: 'flex',
-        'max-width': '600px',
-        'flex-direction': 'column',
-        'align-items': 'flex-start',
-        'justify-content': 'flex-start',
-      }}>
-      <h1
-        class='title'
-        style={{
-          'font-family': 'Oswald',
-          'font-style': 'normal',
-          'font-weight': 900,
-          color: 'white',
-        }}>
-        TRAVIS REDDEN
-      </h1>
-      <h2 class='sub-title'>FULL STACK ENGINEER</h2>
-      <p class='description'>
+    <div className='intro-container'>
+      <h1 className='title'>TRAVIS REDDEN</h1>
+      <h2 className='sub-title'>FULL STACK ENGINEER</h2>
+      <p className='description'>
         Creative developer living in Texas, freelancer, writer of pithy articles
         and software engineer at Loopback Analytics.
       </p>

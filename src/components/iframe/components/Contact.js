@@ -1,40 +1,38 @@
-const Contact = ({ handleZoom }) => {
+const Contact = () => {
   return (
-    <div
-      onClick={() => {
-        handleZoom('SCREEN');
-      }}
-      class='section contact'>
-      <h1 class='title subheading'>CONTACT</h1>
-      <div class='list contact'>
+    <div className='section contact'>
+      <h1 className='title subheading'>CONTACT</h1>
+      <div className='list contact'>
         <a
-          class='button'
+          className='button'
           href='https://twitter.com/Travis_Redden'
           target='_blank'
           rel='noreferrer'>
-          <span class='border'></span> <span class='label'>Twitter</span>
+          <span className='border'></span>{' '}
+          <span className='label'>Twitter</span>
         </a>
         <a
-          class='button'
+          className='button'
           href='https://www.linkedin.com/in/travisredden/'
           target='_blank'
           rel='noreferrer'>
-          <span class='border'></span> <span class='label'>Linkedin</span>
+          <span className='border'></span>{' '}
+          <span className='label'>Linkedin</span>
         </a>
         <a
-          class='button'
+          className='button'
           href='https://github.com/Symphon-y'
           target='_blank'
           rel='noreferrer'>
-          <span class='border'></span> <span class='label'>Github</span>
+          <span className='border'></span> <span className='label'>Github</span>
         </a>
         <a
-          class='button'
+          className='button'
           href='mailto:travisredden@outlook.com'
           target='_blank'
           rel='noreferrer'>
-          <span class='border'></span>
-          <span class='label'>travisredden@outlook.com</span>
+          <span className='border'></span>
+          <span className='label'>travisredden@outlook.com</span>
         </a>
       </div>
     </div>

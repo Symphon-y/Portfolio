@@ -1,30 +1,18 @@
-import React, { useRef } from 'react';
-import { Html, useGLTF, useBounds } from '@react-three/drei';
-import ZoomWrapper from '../Wrappers/zoom-wrapper/ZoomWrapper';
+import React from 'react';
+import { Html, useGLTF } from '@react-three/drei';
 import Iframe from '../iframe/Iframe';
-import { POSITIONS, ROTATIONS } from '../../types/constants';
 import useZoom from '../../hooks/useZoom';
 
 const Laptop = (props) => {
-  const { handleZoom, handleUnzoom } = useZoom();
-  const bounds = useBounds();
+  const { activeObject, handleZoom, handleUnzoom } = useZoom();
 
-  // const [contentRef, setContentRef] = useState(null);
-  const group = useRef();
   const { nodes, materials } = useGLTF(
     'https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf'
   );
-  // const mountNode = contentRef?.contentWindow?.document?.body;
 
   return (
     <>
-      <group
-        onClick={() => {
-          handleZoom('SCREEN');
-        }}
-        onPointerMissed={handleUnzoom}
-        position={[0, 0.52, 0]}
-        scale={[0.1, 0.1, 0.1]}>
+      <group position={[0, 0.52, 0]} scale={[0.1, 0.1, 0.1]}>
         <mesh
           name='monitor'
           geometry={nodes.Circle001.geometry}
@@ -133,17 +121,11 @@ const Laptop = (props) => {
             material={nodes.Circle002.material}
           />
           <mesh
-            onClick={() => {
-              handleZoom('SCREEN');
-            }}
             name='monitor'
             geometry={nodes.Circle002_1.geometry}
             material={materials.Screen}
           />
           <mesh
-            onClick={() => {
-              handleZoom('SCREEN');
-            }}
             name='monitor'
             geometry={nodes.Circle002_2.geometry}
             material={materials.ScreenGlass}
@@ -196,15 +178,16 @@ const Laptop = (props) => {
       wrapperClass adds a css class to the iframe */}
 
       <Html
-        onClick={() => {
-          handleZoom('SCREEN');
-        }}
         transform
         distanceFactor={0.99}
         position={[0, 1.5, -1.4]}
         rotation-x={-0.256}>
         {/* <iframe title='iframe' src='http://www.TravisRedden.com:3006' /> */}
-        <Iframe handleZoom={handleZoom} handleUnzoom={handleUnzoom} />
+        <Iframe
+          activeObject={activeObject}
+          handleZoom={handleZoom}
+          handleUnzoom={handleUnzoom}
+        />
       </Html>
     </>
   );
