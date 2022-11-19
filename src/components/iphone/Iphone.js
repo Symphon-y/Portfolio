@@ -157,8 +157,8 @@ const Iphone = (props) => {
       {clicked && (
         <>
           {' '}
-          <Header>Lingo Lingo</Header>
-          <Body>
+          <Header position={[2, 2.5, 1]}>Lingo Lingo</Header>
+          <Body position={[3.7, 1, 1]}>
             An online language exchange platform consisting of a forum, chat
             feature, and event scheduler. ● Lead a team of eight engineers.
             Organized and officiated daily stand-ups, maintained trello
