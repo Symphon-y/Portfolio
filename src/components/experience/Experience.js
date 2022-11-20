@@ -26,8 +26,6 @@ import { ZoomContextProvider } from '../../context/ZoomContextProvider';
 const Experience = () => {
   const { modal, setModal, popUpModal } = useModal();
 
-  useEffect(() => {}, [modal]);
-
   const { width, height } = useWindowDimensions();
 
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -60,7 +58,6 @@ const Experience = () => {
         snap returns the object to its initial position */}
         {/* <Bounds fit={false} observe={false} damping={4} margin={1}> */}
         {popUpModal()}
-
         <PresentationControls
           global
           rotation={[0.13, 0.5, 0]}
@@ -81,84 +78,82 @@ const Experience = () => {
               position={[0, 1.75, -1.15]}
             />
             {/* <ClickToZoom> */}
-            <ZoomContextProvider>
-              <mesh position-y={-1.2} scale={1.25}>
-                <Laptop />
-              </mesh>
-              {/* Adds text to the scene */}
-              <Text
-                font='./bangers-v20-latin/bangers-v20-latin-regular.ttf'
-                fontSize={1}
-                position={[2, 0.75, 0.75]}
-                rotation-y={-1.25}
-                maxWidth={2}
-                textAlign='center'>
-                TRAVIS REDDEN
-              </Text>
-              {/* Adds Coffee Cup Mesh */}
-              <mesh
-                position={[-0.2, -0.7, 3]}
-                scale={-0.4}
-                rotation-x={Math.PI * 0.85}
-                rotation-y={Math.PI * 0.25}>
-                <Coffee modal={modal} setModal={setModal} />
-              </mesh>
-              {/* Adds Keyboard Mesh */}
-              <mesh
-                position={[-2, -1.55, 0.2]}
-                scale={15}
-                rotation-y={Math.PI * -0.25}>
-                <KeyboardContextProvider>
-                  <Keyboard />
-                </KeyboardContextProvider>
-              </mesh>
+            <mesh position-y={-1.2} scale={1.25}>
+              <Laptop />
+            </mesh>
+            {/* Adds text to the scene */}
+            <Text
+              font='./bangers-v20-latin/bangers-v20-latin-regular.ttf'
+              fontSize={1}
+              position={[2, 0.75, 0.75]}
+              rotation-y={-1.25}
+              maxWidth={2}
+              textAlign='center'>
+              TRAVIS REDDEN
+            </Text>
+            {/* Adds Coffee Cup Mesh */}
+            <mesh
+              position={[-0.2, -0.7, 3]}
+              scale={-0.4}
+              rotation-x={Math.PI * 0.85}
+              rotation-y={Math.PI * 0.25}>
+              <Coffee modal={modal} setModal={setModal} />
+            </mesh>
+            {/* Adds Keyboard Mesh */}
+            <mesh
+              position={[-2, -1.55, 0.2]}
+              scale={15}
+              rotation-y={Math.PI * -0.25}>
+              <KeyboardContextProvider>
+                <Keyboard />
+              </KeyboardContextProvider>
+            </mesh>
 
-              <pointLight
-                position={[2, -3, 2]}
-                distance={100}
-                intensity={3}
-                color='blue'
-              />
-              <pointLight
-                position={[-1, 1, 2]}
-                distance={100}
-                intensity={2}
-                color='red'
-              />
+            <pointLight
+              position={[2, -3, 2]}
+              distance={100}
+              intensity={3}
+              color='blue'
+            />
+            <pointLight
+              position={[-1, 1, 2]}
+              distance={100}
+              intensity={2}
+              color='red'
+            />
 
-              <mesh
-                position={[-4, -0.5, 0]}
-                scale={0.25}
-                rotation-y={Math.PI * 0.3}
-                rotation-x={Math.PI * -0.25}
-                rotation-z={Math.PI * 0.15}>
-                <Iphone modal={modal} setModal={setModal} />
-              </mesh>
-              <mesh
-                position={[-4.2, -0.75, -5]}
-                scale={0.45}
-                rotation-y={Math.PI * 0.75}
-                rotation-x={Math.PI * -0.25}
-                rotation-z={Math.PI * 0.15}>
-                <Shoe modal={modal} setModal={setModal} />
-              </mesh>
-              <mesh
-                position={[-11.26, 1.0, -25]}
-                scale={0.1}
-                rotation-y={Math.PI * 0.75}
-                rotation-x={Math.PI * -0.25}
-                rotation-z={Math.PI * 0.15}>
-                <Supernova />
-              </mesh>
-              <mesh
-                position={[19.5, 5.5, -5]}
-                scale={1}
-                rotation-y={Math.PI * -0.33}
-                rotation-x={Math.PI * 0.28}
-                rotation-z={Math.PI * 0.4}>
-                <Astronaught />
-              </mesh>
-            </ZoomContextProvider>
+            <mesh
+              position={[-4, -0.5, 0]}
+              scale={0.25}
+              rotation-y={Math.PI * 0.3}
+              rotation-x={Math.PI * -0.25}
+              rotation-z={Math.PI * 0.15}>
+              <Iphone modal={modal} setModal={setModal} />
+            </mesh>
+            <mesh
+              position={[-4.2, -0.75, -5]}
+              scale={0.45}
+              rotation-y={Math.PI * 0.75}
+              rotation-x={Math.PI * -0.25}
+              rotation-z={Math.PI * 0.15}>
+              <Shoe modal={modal} setModal={setModal} />
+            </mesh>
+            <mesh
+              position={[-11.26, 1.0, -25]}
+              scale={0.1}
+              rotation-y={Math.PI * 0.75}
+              rotation-x={Math.PI * -0.25}
+              rotation-z={Math.PI * 0.15}>
+              <Supernova />
+            </mesh>
+            <mesh
+              position={[19.5, 5.5, -5]}
+              scale={1}
+              rotation-y={Math.PI * -0.33}
+              rotation-x={Math.PI * 0.28}
+              rotation-z={Math.PI * 0.4}>
+              <Astronaught />
+            </mesh>
           </Float>
         </PresentationControls>
         {/* Adds default shadows to the scene */}

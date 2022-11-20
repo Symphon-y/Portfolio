@@ -5,11 +5,10 @@ import Footer from './components/Footer';
 import './PortfolioModal.css';
 import { useState } from 'react';
 
-const PortfolioModal = ({ activeObject, handleZoom, handleUnzoom }) => {
+const PortfolioModal = ({ activeObject, setActiveObject, modal, setModal }) => {
   const [clicked, setClicked] = useState(false);
-
   const content = () => {
-    switch (activeObject) {
+    switch (modal.activeObject) {
       case 'PHONE':
         return <div>PHONE</div>;
       case 'SHOE':
@@ -19,22 +18,10 @@ const PortfolioModal = ({ activeObject, handleZoom, handleUnzoom }) => {
     }
   };
   return (
-    <div
-      onClick={(e) => {
-        console.log(activeObject);
-        e.stopPropagation();
-        if (!clicked) {
-          // handleZoom('SCREEN');
-          setClicked(!clicked);
-        } else {
-          // handleUnzoom();
-          setClicked(!clicked);
-        }
-      }}
-      className={'modal-container'}>
+    <div className={'modal-container'}>
       <Header />
       {content()}
-      <Footer />
+      <Footer activeObject={activeObject} setActiveObject={setActiveObject} />
     </div>
   );
 };

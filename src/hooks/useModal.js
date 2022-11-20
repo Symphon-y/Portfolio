@@ -1,14 +1,17 @@
-import { Billboard, Float, Html } from '@react-three/drei';
-import { useState, useEffect, useContext } from 'react';
+import { Billboard, Html } from '@react-three/drei';
+import { useContext, useState } from 'react';
 import PortfolioModal from '../components/experience/portfolioModal/PortfolioModal';
-import Iframe from '../components/iframe/Iframe';
-import { ZoomContextProvider } from '../context/ZoomContextProvider';
+import { ZoomContext } from '../context/ZoomContext';
+import useZoom from './useZoom';
 
 const useModal = () => {
-  const [modal, setModal] = useState({
-    open: false,
-    position: null,
-  });
+  const { modal, setModal, activeObject, setActiveObject } =
+    useContext(ZoomContext);
+  // const [modal, setModal] = useState({
+  //   open: false,
+  //   position: null,
+  //   activeObject: '',
+  // });
 
   const popUpModal = () => {
     return (
@@ -22,7 +25,12 @@ const useModal = () => {
               lockZ={true}
               position={modal.position}>
               <Html>
-                <PortfolioModal />
+                <PortfolioModal
+                  setActiveObject={setActiveObject}
+                  activeObject={activeObject}
+                  modal={modal}
+                  setModal={setModal}
+                />
               </Html>
             </Billboard>
           </>
