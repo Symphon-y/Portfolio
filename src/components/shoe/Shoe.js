@@ -1,12 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import useZoom from '../../hooks/useZoom';
 import Header from '../description/header';
 import Body from '../description/body';
 
-const Shoe = (props) => {
-  const [clicked, isClicked] = useState(false);
-
+const Shoe = ({ modal, setModal, ...props }) => {
   const { handleZoom, handleUnzoom } = useZoom();
   const { nodes, materials } = useGLTF('/nike_air_zoom_pegasus_36.glb');
   return (
@@ -14,17 +12,21 @@ const Shoe = (props) => {
       {...props}
       dispose={null}
       onClick={() => {
-        if (clicked) {
-          handleUnzoom();
-          isClicked(!clicked);
-        } else {
+        if (!modal.open) {
           handleZoom('SHOE');
-          isClicked(!clicked);
+          setModal({
+            open: !modal.open,
+            position: [-190, 30, -155],
+            activeObject: 'SHOE',
+          });
+        } else {
+          handleUnzoom();
+          setModal({ ...modal, open: false });
         }
       }}
       onPointerMissed={() => {
         handleUnzoom();
-        isClicked(false);
+        setModal({ ...modal, open: false });
       }}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
@@ -36,23 +38,6 @@ const Shoe = (props) => {
           />
         </group>
       </group>
-      {clicked && (
-        <>
-          <Header
-            position={[1.2, -1.15, 1.75]}
-            rotation={[Math.PI / 2.5, -1.8, 0]}>
-            Sole Inc.
-          </Header>
-          <Body position={[0.2, -2.5, 0.5]} rotation={[Math.PI / 2.5, -1.8, 0]}>
-            Our team was tasked with creating a complete redesign of an
-            outadated client-facing retail web-portal including but not limited
-            to branding, and website functionality. This project comprises a
-            complete redesign of the retail portal intended to address the
-            client's concerns and modernize the site. This document outlines the
-            design and features our team implemented.
-          </Body>
-        </>
-      )}
     </group>
   );
 };

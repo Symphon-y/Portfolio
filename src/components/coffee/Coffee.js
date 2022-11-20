@@ -4,7 +4,6 @@ import useZoom from '../../hooks/useZoom';
 import useModal from '../../hooks/useModal';
 
 const Coffee = ({ modal, setModal }) => {
-  // const { modal, setModal, popUpModal } = useModal();
   const { handleZoom, handleUnzoom } = useZoom();
 
   const { nodes } = useGLTF(
@@ -14,21 +13,34 @@ const Coffee = ({ modal, setModal }) => {
     <>
       <mesh
         onClick={() => {
-          setModal(!modal);
-          handleZoom('COFFEE');
+          if (!modal.open) {
+            handleZoom('COFFEE');
+            setModal({ open: !modal.open, position: [5, 3.55, -3] });
+          } else {
+            handleUnzoom();
+            setModal({ ...modal, open: false });
+          }
         }}
-        onPointerMissed={handleUnzoom}
+        onPointerMissed={() => {
+          handleUnzoom();
+          setModal({ ...modal, open: false });
+        }}
         name='coffee'
         geometry={nodes.Cup.geometry}
         material={nodes.Cup.material}>
         <mesh
           onClick={() => {
-            setModal(!modal);
-            handleZoom('COFFEE');
+            if (!modal.open) {
+              handleZoom('COFFEE');
+              setModal({ open: !modal.open, position: [5, 3.55, -3] });
+            } else {
+              handleUnzoom();
+              setModal({ ...modal, open: false });
+            }
           }}
           onPointerMissed={() => {
             handleUnzoom();
-            setModal(!modal);
+            setModal({ ...modal, open: false });
           }}
           name='coffee'
           geometry={nodes.Cube.geometry}

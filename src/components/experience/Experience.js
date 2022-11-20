@@ -12,20 +12,16 @@ import Keyboard from '../keyboard/KeyboardTwo';
 import { Canvas } from '@react-three/fiber';
 import { KeyboardContextProvider } from '../../context/KeyboardContextProvider';
 import Particles from '../particles/Particles';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import Iphone from '../iphone/Iphone';
 import Shoe from '../shoe/Shoe';
 import Supernova from '../project-supernova/supernova';
 import Astronaught from '../astronaught/Astronaught';
 import useWindowDimensions from '../../hooks/useWindowDiminsions';
-import {
-  DepthOfField,
-  EffectComposer,
-  Vignette,
-} from '@react-three/postprocessing';
-import PortfolioModal from './portfolioModal/PortfolioModal';
+
 import { useEffect } from 'react';
 import useModal from '../../hooks/useModal';
+import { ZoomContextProvider } from '../../context/ZoomContextProvider';
 
 const Experience = () => {
   const { modal, setModal, popUpModal } = useModal();
@@ -85,82 +81,84 @@ const Experience = () => {
               position={[0, 1.75, -1.15]}
             />
             {/* <ClickToZoom> */}
-            <mesh position-y={-1.2} scale={1.25}>
-              <Laptop />
-            </mesh>
-            {/* Adds text to the scene */}
-            <Text
-              font='./bangers-v20-latin/bangers-v20-latin-regular.ttf'
-              fontSize={1}
-              position={[2, 0.75, 0.75]}
-              rotation-y={-1.25}
-              maxWidth={2}
-              textAlign='center'>
-              TRAVIS REDDEN
-            </Text>
-            {/* Adds Coffee Cup Mesh */}
-            <mesh
-              position={[-0.2, -0.7, 3]}
-              scale={-0.4}
-              rotation-x={Math.PI * 0.85}
-              rotation-y={Math.PI * 0.25}>
-              <Coffee modal={modal} setModal={setModal} />
-            </mesh>
-            {/* Adds Keyboard Mesh */}
-            <mesh
-              position={[-2, -1.55, 0.2]}
-              scale={15}
-              rotation-y={Math.PI * -0.25}>
-              <KeyboardContextProvider>
-                <Keyboard />
-              </KeyboardContextProvider>
-            </mesh>
+            <ZoomContextProvider>
+              <mesh position-y={-1.2} scale={1.25}>
+                <Laptop />
+              </mesh>
+              {/* Adds text to the scene */}
+              <Text
+                font='./bangers-v20-latin/bangers-v20-latin-regular.ttf'
+                fontSize={1}
+                position={[2, 0.75, 0.75]}
+                rotation-y={-1.25}
+                maxWidth={2}
+                textAlign='center'>
+                TRAVIS REDDEN
+              </Text>
+              {/* Adds Coffee Cup Mesh */}
+              <mesh
+                position={[-0.2, -0.7, 3]}
+                scale={-0.4}
+                rotation-x={Math.PI * 0.85}
+                rotation-y={Math.PI * 0.25}>
+                <Coffee modal={modal} setModal={setModal} />
+              </mesh>
+              {/* Adds Keyboard Mesh */}
+              <mesh
+                position={[-2, -1.55, 0.2]}
+                scale={15}
+                rotation-y={Math.PI * -0.25}>
+                <KeyboardContextProvider>
+                  <Keyboard />
+                </KeyboardContextProvider>
+              </mesh>
 
-            <pointLight
-              position={[2, -3, 2]}
-              distance={100}
-              intensity={3}
-              color='blue'
-            />
-            <pointLight
-              position={[-1, 1, 2]}
-              distance={100}
-              intensity={2}
-              color='red'
-            />
+              <pointLight
+                position={[2, -3, 2]}
+                distance={100}
+                intensity={3}
+                color='blue'
+              />
+              <pointLight
+                position={[-1, 1, 2]}
+                distance={100}
+                intensity={2}
+                color='red'
+              />
 
-            <mesh
-              position={[-4, -0.5, 0]}
-              scale={0.25}
-              rotation-y={Math.PI * 0.3}
-              rotation-x={Math.PI * -0.25}
-              rotation-z={Math.PI * 0.15}>
-              <Iphone />
-            </mesh>
-            <mesh
-              position={[-4.2, -0.75, -5]}
-              scale={0.45}
-              rotation-y={Math.PI * 0.75}
-              rotation-x={Math.PI * -0.25}
-              rotation-z={Math.PI * 0.15}>
-              <Shoe />
-            </mesh>
-            <mesh
-              position={[-11.26, 1.0, -25]}
-              scale={0.1}
-              rotation-y={Math.PI * 0.75}
-              rotation-x={Math.PI * -0.25}
-              rotation-z={Math.PI * 0.15}>
-              <Supernova />
-            </mesh>
-            <mesh
-              position={[19.5, 5.5, -5]}
-              scale={1}
-              rotation-y={Math.PI * -0.33}
-              rotation-x={Math.PI * 0.28}
-              rotation-z={Math.PI * 0.4}>
-              <Astronaught />
-            </mesh>
+              <mesh
+                position={[-4, -0.5, 0]}
+                scale={0.25}
+                rotation-y={Math.PI * 0.3}
+                rotation-x={Math.PI * -0.25}
+                rotation-z={Math.PI * 0.15}>
+                <Iphone modal={modal} setModal={setModal} />
+              </mesh>
+              <mesh
+                position={[-4.2, -0.75, -5]}
+                scale={0.45}
+                rotation-y={Math.PI * 0.75}
+                rotation-x={Math.PI * -0.25}
+                rotation-z={Math.PI * 0.15}>
+                <Shoe modal={modal} setModal={setModal} />
+              </mesh>
+              <mesh
+                position={[-11.26, 1.0, -25]}
+                scale={0.1}
+                rotation-y={Math.PI * 0.75}
+                rotation-x={Math.PI * -0.25}
+                rotation-z={Math.PI * 0.15}>
+                <Supernova />
+              </mesh>
+              <mesh
+                position={[19.5, 5.5, -5]}
+                scale={1}
+                rotation-y={Math.PI * -0.33}
+                rotation-x={Math.PI * 0.28}
+                rotation-z={Math.PI * 0.4}>
+                <Astronaught />
+              </mesh>
+            </ZoomContextProvider>
           </Float>
         </PresentationControls>
         {/* Adds default shadows to the scene */}

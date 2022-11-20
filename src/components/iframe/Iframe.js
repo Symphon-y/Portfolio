@@ -14,7 +14,6 @@ const Iframe = ({ activeObject, handleZoom, handleUnzoom }) => {
   return (
     <div
       onClick={(e) => {
-        console.log(activeObject);
         e.stopPropagation();
         if (!clicked) {
           handleZoom('SCREEN');
