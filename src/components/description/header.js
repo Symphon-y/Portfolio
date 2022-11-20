@@ -1,6 +1,18 @@
+import React, { useState } from 'react';
 import { Billboard, Text } from '@react-three/drei';
 
 const Header = ({ children, ...props }) => {
+  const [opts, setOpts] = useState({
+    font: './bangers-v20-latin/bangers-v20-latin-regular.ttf',
+    fontSize: 0.5,
+    color: '#99ccff',
+    maxWidth: 3,
+    lineHeight: 1,
+    letterSpacing: 0,
+    textAlign: 'justify',
+    materialType: 'MeshPhongMaterial',
+  });
+
   return (
     <>
       <Billboard
@@ -9,12 +21,7 @@ const Header = ({ children, ...props }) => {
         lockY={true}
         lockZ={false} // Lock the rotation on the z axis (default=false)
       >
-        <Text
-          font='./bangers-v20-latin/bangers-v20-latin-regular.ttf'
-          {...props}
-          fontSize={0.4}
-          maxWidth={7}
-          textAlign='left'>
+        <Text {...props} {...opts}>
           {children}
         </Text>
       </Billboard>

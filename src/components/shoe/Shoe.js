@@ -23,19 +23,16 @@ const Shoe = (props) => {
           />
         </group>
       </group>
-      <Header>TEST</Header>
-      <Body>
-        An online language exchange platform consisting of a forum, chat
-        feature, and event scheduler. ● Lead a team of eight engineers.
-        Organized and officiated daily stand-ups, maintained trello ticketing
-        system, and ensured the execution of a unified project vision. ●
-        Organized front end codebase with React while maintaining a structured
-        separation of concerns between components. ● Created dynamic header with
-        content filtering feature in React to facilitate the users ability to
-        search forum cards. ● Constructed sidebar with React consisting of drop
-        down menus and dynamic links to provide website navigation. ● Designed
-        wireframe and mockup in figma in order to facilitate the implementation
-        of front end styling conventions
+      <Header position={[0.2, 0, 0.75]} rotation={[Math.PI / 2.5, -1.8, 0]}>
+        Sole Inc.
+      </Header>
+      <Body position={[0.2, -2.5, 0.5]} rotation={[Math.PI / 2.5, -1.8, 0]}>
+        Our team was tasked with creating a complete redesign of an outadated
+        client-facing retail web-portal including but not limited to branding,
+        and website functionality. This project comprises a complete redesign of
+        the retail portal intended to address the client's concerns and
+        modernize the site. This document outlines the design and features our
+        team implemented.
       </Body>
     </group>
   );
