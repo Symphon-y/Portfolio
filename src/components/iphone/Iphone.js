@@ -9,6 +9,7 @@ import Header from '../description/header';
 import Body from '../description/body';
 
 const Iphone = (props) => {
+  const [modal, setModal] = useState(false);
   const [clicked, isClicked] = useState(false);
   const { handleZoom, handleUnzoom } = useZoom();
   const group = useRef();
@@ -153,20 +154,6 @@ const Iphone = (props) => {
           />
         </group>
       </group>
-      {clicked && (
-        <>
-          {' '}
-          <Header position={[2.2, 2.45, 0.5]}>Lingo Lingo</Header>
-          <Body position={[2.7, 1.65, 0.5]}>
-            Our team was tasked with the development and design of an online
-            language exchange platform consisting of a forum, chat feature, and
-            event scheduler.
-          </Body>
-          <Body position={[1.4, 0.65, 0.5]}>ROLE:</Body>
-          <Body position={[1.9, 0.35, 0.5]}>Full Stack Engineer</Body>
-          {/* <Body position={[2.7, 0.35, 0.5]5}>UI/UX</Body> */}
-        </>
-      )}
     </group>
   );
 };

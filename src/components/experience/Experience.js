@@ -12,7 +12,7 @@ import Keyboard from '../keyboard/KeyboardTwo';
 import { Canvas } from '@react-three/fiber';
 import { KeyboardContextProvider } from '../../context/KeyboardContextProvider';
 import Particles from '../particles/Particles';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Iphone from '../iphone/Iphone';
 import Shoe from '../shoe/Shoe';
 import Supernova from '../project-supernova/supernova';
@@ -23,8 +23,15 @@ import {
   EffectComposer,
   Vignette,
 } from '@react-three/postprocessing';
+import PortfolioModal from './portfolioModal/PortfolioModal';
+import { useEffect } from 'react';
+import useModal from '../../hooks/useModal';
 
 const Experience = () => {
+  const { modal, setModal, popUpModal } = useModal();
+
+  useEffect(() => {}, [modal]);
+
   const { width, height } = useWindowDimensions();
 
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -56,6 +63,8 @@ const Experience = () => {
         config alters the internal Spring library animation settings #jiggle-physics
         snap returns the object to its initial position */}
         {/* <Bounds fit={false} observe={false} damping={4} margin={1}> */}
+        {popUpModal()}
+
         <PresentationControls
           global
           rotation={[0.13, 0.5, 0]}
@@ -95,7 +104,7 @@ const Experience = () => {
               scale={-0.4}
               rotation-x={Math.PI * 0.85}
               rotation-y={Math.PI * 0.25}>
-              <Coffee />
+              <Coffee modal={modal} setModal={setModal} />
             </mesh>
             {/* Adds Keyboard Mesh */}
             <mesh

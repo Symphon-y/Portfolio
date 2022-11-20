@@ -1,0 +1,18 @@
+.portfolio-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  z-index: 100000000;
+}
+.portfolio-modal-content {
+  background-color: red;
+  width: 50%;
+  height: 50%;
+}

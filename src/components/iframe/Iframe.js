@@ -7,6 +7,7 @@ import Education from './components/Education';
 
 import './Iframe.css';
 import { useState } from 'react';
+import BrowserHeader from './components/BrowserHeader';
 
 const Iframe = ({ activeObject, handleZoom, handleUnzoom }) => {
   const [clicked, setClicked] = useState(false);
@@ -24,6 +25,7 @@ const Iframe = ({ activeObject, handleZoom, handleUnzoom }) => {
         }
       }}
       className={'i-container'}>
+      <BrowserHeader />
       <Header />
       <Contact />
       <Activities />

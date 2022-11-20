@@ -135,6 +135,14 @@
   padding-bottom: 5rem;
 }
 
+.browser-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
 .intro-container {
   display: flex;
   max-width: 600px;
@@ -159,6 +167,7 @@ h1 {
 }
 
 .title {
+  margin-top: 4rem;
   font-size: 4rem;
   margin-bottom: 0;
 }
