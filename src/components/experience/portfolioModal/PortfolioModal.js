@@ -2,8 +2,9 @@ import Header from './components/Header';
 
 import Footer from './components/Footer';
 
-import './PortfolioModal.css';
+import './portfoliomodal.css';
 import { useState } from 'react';
+import LingoLingo from './components/LingoLingo';
 
 const PortfolioModal = ({
   handleZoom,
@@ -17,7 +18,7 @@ const PortfolioModal = ({
   const content = () => {
     switch (modal.activeObject) {
       case 'PHONE':
-        return <div>PHONE</div>;
+        return <LingoLingo />;
       case 'SHOE':
         return <div>SHOE</div>;
       default:
@@ -25,8 +26,7 @@ const PortfolioModal = ({
     }
   };
   return (
-    <div className={'modal-container'}>
-      <Header />
+    <div className='modal-container'>
       {content()}
       <Footer
         modal={modal}

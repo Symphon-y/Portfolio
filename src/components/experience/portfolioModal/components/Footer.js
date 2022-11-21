@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { ZoomContext } from '../../../../context/ZoomContext';
+import BtnPrimary from '../../../shared/BtnPrimary';
 import LeftArrow from './icons/leftArrow';
 
 const Footer = ({
@@ -33,9 +34,7 @@ const Footer = ({
           <LeftArrow style={{ scale: 0.15 }} />
           <button className='previous-button'>Previous</button>
         </div>
-        <button onClick={handleNext} className='next-button'>
-          Next
-        </button>
+        <BtnPrimary onClick={handleNext}>Next</BtnPrimary>
       </div>
     </div>
   );

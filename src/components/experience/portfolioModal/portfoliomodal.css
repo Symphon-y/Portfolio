@@ -1,3 +1,67 @@
+/* Worksans - Thin */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 100;
+  src: url('../../../assets/fonts/worksans/WorkSans-Thin.ttf')
+}
+
+/* Worksans - light */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 200;
+  src: url('../../../assets/fonts/worksans/WorkSans-Light.ttf');
+}
+
+/* Worksans - medium */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../../../assets/fonts/worksans/WorkSans-Medium.ttf');
+}
+
+/* Worksans - regular */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../../assets/fonts/worksans/WorkSans-Regular.ttf');
+}
+
+/* Worksans - semibold */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../../../assets/fonts/worksans/WorkSans-SemiBold.ttf')
+}
+
+/* Worksans - bold */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../../../assets/fonts/worksans/WorkSans-Bold.ttf')
+}
+
+/* Worksans - extra bold */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../../../assets/fonts/worksans/WorkSans-ExtraBold.ttf')
+}
+
+/* Worksans - Black */
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../../../assets/fonts/worksans/WorkSans-Black.ttf')
+}
+
 /* oswald-200 - latin */
 @font-face {
   font-family: 'Oswald';
@@ -144,15 +208,47 @@
   }
 
   100% {
-    height: 50.7rem;
+    height: 60.688rem;
     opacity: 100%;
   }
 }
+
+/* *  {
+  border:1px solid red
+} */
+
+h1, h3 {
+  font-family: 'Work Sans';
+  font-size: 1.568rem;
+  font-weight: 500;
+  color: black;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+h3 {
+  margin-bottom: 0rem;
+  font-weight: 200;
+
+  font-size: .9rem;
+  color: rgba(0, 0, 0, .5);
+}
+
+p, li {
+  font-family: 'Work Sans';
+  font-size: 1.155rem;
+  font-weight: 200;
+  color: rgba(0, 0, 0, .5);
+  margin-top: 0rem;
+}
 .modal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   bottom: 0;
   right: 0;
-  height: 53.7rem;
-  width: 40.5rem;
+  height: 60.688rem;
+  width: 47.8rem;
   border: none;
   border-radius: 24px;
   overflow: scroll;
@@ -161,22 +257,95 @@
   background-color: white;
   padding-left: 4rem;
   padding-right: 4rem;
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
 }
 
+  @media only screen and (max-width: 1920px) {
+
+    @keyframes portfolioAnimation {
+      0% {
+        height: 0rem;
+        opacity: 0%;
+      }
+
+      50% {
+        height: 0rem;
+        opacity: 0%;
+      }
+
+      100% {
+        height: 50rem;
+        opacity: 100%;
+      }
+    }
+      .modal-container {
+        height: 50rem;
+        width: 37rem;
+        overflow: hidden;
+      }
+  }
+
+.modal-header-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.4rem;
+  width: 40rem
+}
+
+.modal-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 38.564rem;
+  width: 40rem;
+  overflow: scroll;
+  margin-top: 1rem;
+  flex-direction: column;
+  height: 100%;
+}
+
+.info-stack {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 0rem;
+}
+
+.portfolio-gif {
+  height: 12.8rem;
+  width: 24.4rem;
+  object-fit: contain;
+  border-radius: 10.56px;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, .2);
+}
 .footer-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  margin-top: 1.25rem;
+
 }
 
 .footer-btn-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  width: 13rem;
+  width: 75%;
 }
 
 .previous-btn-container {
@@ -193,13 +362,28 @@
   color: rgba(0, 0, 0, .5);
 }
 
-.next-button {
+button {
+  font-family: 'Work Sans';
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.btn-primary {
   background-color: #48ABFE;
+  font-family: 'Work Sans';
+  font-size: 1.15rem;
+  font-weight: 500;
   cursor: pointer;
-  width: 6.1rem;
-  height: 2.25rem;
+  width: 11.25rem;
+  height: 3.4rem;
   text-decoration: none;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10.56px;
+}
+
+.github {
+  width: 14rem;
+  margin-top: 1.2rem;
+  height: 3.35rem;
 }
