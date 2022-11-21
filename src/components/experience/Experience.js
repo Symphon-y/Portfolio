@@ -5,14 +5,16 @@ import {
   PresentationControls,
   ContactShadows,
   RandomizedLight,
+  Billboard,
+  Html,
 } from '@react-three/drei';
 import Laptop from '../laptop/Laptop';
 import Coffee from '../coffee/Coffee';
 import Keyboard from '../keyboard/KeyboardTwo';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useThree } from '@react-three/fiber';
 import { KeyboardContextProvider } from '../../context/KeyboardContextProvider';
 import Particles from '../particles/Particles';
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
 import Iphone from '../iphone/Iphone';
 import Shoe from '../shoe/Shoe';
 import Supernova from '../project-supernova/supernova';
@@ -22,10 +24,13 @@ import useWindowDimensions from '../../hooks/useWindowDiminsions';
 import { useEffect } from 'react';
 import useModal from '../../hooks/useModal';
 import { ZoomContextProvider } from '../../context/ZoomContextProvider';
+import PortfolioModal from './portfolioModal/PortfolioModal';
+import PopUpModal from './portfolioModal/PopUpModal';
+import { ZoomContext } from '../../context/ZoomContext';
 
 const Experience = () => {
-  const { modal, setModal, popUpModal } = useModal();
-
+  // const { modal, setModal, popUpModal } = useModal();
+  const { modal, setModal } = useContext(ZoomContext);
   const { width, height } = useWindowDimensions();
 
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -57,7 +62,8 @@ const Experience = () => {
         config alters the internal Spring library animation settings #jiggle-physics
         snap returns the object to its initial position */}
         {/* <Bounds fit={false} observe={false} damping={4} margin={1}> */}
-        {popUpModal()}
+        {/* {popUpModal()} */}
+        <PopUpModal modal={modal} setModal={setModal} />
         <PresentationControls
           global
           rotation={[0.13, 0.5, 0]}

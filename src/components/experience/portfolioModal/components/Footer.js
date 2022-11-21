@@ -2,7 +2,14 @@ import { useContext } from 'react';
 import { ZoomContext } from '../../../../context/ZoomContext';
 import LeftArrow from './icons/leftArrow';
 
-const Footer = ({ activeObject, setActiveObject }) => {
+const Footer = ({
+  modal,
+  setModal,
+  handleZoom,
+  handleUnzoom,
+  activeObject,
+  setActiveObject,
+}) => {
   const navList = {
     DEFAULT_CAMERA: 'SCREEN',
     SCREEN: 'PHONE',
@@ -13,10 +20,12 @@ const Footer = ({ activeObject, setActiveObject }) => {
   };
 
   const handleNext = (e) => {
-    e.stopPropagation();
+    setModal({ ...modal, open: false });
     setActiveObject(navList[activeObject]);
-    alert(activeObject);
+    handleZoom(navList[activeObject]);
+    e.stopPropagation();
   };
+
   return (
     <div className='footer-container'>
       <div className='footer-btn-container'>

@@ -5,7 +5,14 @@ import Footer from './components/Footer';
 import './PortfolioModal.css';
 import { useState } from 'react';
 
-const PortfolioModal = ({ activeObject, setActiveObject, modal, setModal }) => {
+const PortfolioModal = ({
+  handleZoom,
+  handleUnzoom,
+  activeObject,
+  setActiveObject,
+  modal,
+  setModal,
+}) => {
   const [clicked, setClicked] = useState(false);
   const content = () => {
     switch (modal.activeObject) {
@@ -21,7 +28,14 @@ const PortfolioModal = ({ activeObject, setActiveObject, modal, setModal }) => {
     <div className={'modal-container'}>
       <Header />
       {content()}
-      <Footer activeObject={activeObject} setActiveObject={setActiveObject} />
+      <Footer
+        modal={modal}
+        setModal={setModal}
+        handleZoom={handleZoom}
+        handleUnzoom={handleUnzoom}
+        activeObject={activeObject}
+        setActiveObject={setActiveObject}
+      />
     </div>
   );
 };

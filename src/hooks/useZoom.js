@@ -67,9 +67,7 @@ const useZoom = () => {
       .easing(TWEEN.Easing.Quadratic.InOut)
       .start();
   }, [setActiveObject, camera.position, camera.rotation]);
-  useEffect(() => {
-    handleZoom(activeObject);
-  }, [handleZoom, activeObject]);
+
   return {
     activeObject,
     handleZoom,
