@@ -1,12 +1,20 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import useZoom from '../../hooks/useZoom';
 import Header from '../description/header';
 import Body from '../description/body';
 
-const Shoe = ({ modal, setModal, ...props }) => {
+const Shoe = ({ activeObject, setActiveObject, modal, setModal, ...props }) => {
   const { handleZoom, handleUnzoom } = useZoom();
   const { nodes, materials } = useGLTF('/nike_air_zoom_pegasus_36.glb');
+  useEffect(() => {
+    if (activeObject === 'SHOE' && !modal.open) {
+      setModal({
+        open: !modal.open,
+        position: [-190, 30, -155],
+      });
+    }
+  }, [modal.open, setModal, activeObject]);
   return (
     <group
       {...props}
@@ -17,7 +25,6 @@ const Shoe = ({ modal, setModal, ...props }) => {
           setModal({
             open: !modal.open,
             position: [-190, 30, -155],
-            activeObject: 'SHOE',
           });
         } else {
           handleUnzoom();

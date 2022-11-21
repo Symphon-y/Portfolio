@@ -30,7 +30,8 @@ import { ZoomContext } from '../../context/ZoomContext';
 
 const Experience = () => {
   // const { modal, setModal, popUpModal } = useModal();
-  const { modal, setModal } = useContext(ZoomContext);
+  const { activeObject, setActiveObject, modal, setModal } =
+    useContext(ZoomContext);
   const { width, height } = useWindowDimensions();
 
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -134,7 +135,12 @@ const Experience = () => {
               rotation-y={Math.PI * 0.3}
               rotation-x={Math.PI * -0.25}
               rotation-z={Math.PI * 0.15}>
-              <Iphone modal={modal} setModal={setModal} />
+              <Iphone
+                activeObject={activeObject}
+                setActiveObject={setActiveObject}
+                modal={modal}
+                setModal={setModal}
+              />
             </mesh>
             <mesh
               position={[-4.2, -0.75, -5]}
@@ -142,7 +148,12 @@ const Experience = () => {
               rotation-y={Math.PI * 0.75}
               rotation-x={Math.PI * -0.25}
               rotation-z={Math.PI * 0.15}>
-              <Shoe modal={modal} setModal={setModal} />
+              <Shoe
+                activeObject={activeObject}
+                setActiveObject={setActiveObject}
+                modal={modal}
+                setModal={setModal}
+              />
             </mesh>
             <mesh
               position={[-11.26, 1.0, -25]}
@@ -150,7 +161,12 @@ const Experience = () => {
               rotation-y={Math.PI * 0.75}
               rotation-x={Math.PI * -0.25}
               rotation-z={Math.PI * 0.15}>
-              <Supernova />
+              <Supernova
+                activeObject={activeObject}
+                setActiveObject={setActiveObject}
+                modal={modal}
+                setModal={setModal}
+              />
             </mesh>
             <mesh
               position={[19.5, 5.5, -5]}
@@ -158,7 +174,12 @@ const Experience = () => {
               rotation-y={Math.PI * -0.33}
               rotation-x={Math.PI * 0.28}
               rotation-z={Math.PI * 0.4}>
-              <Astronaught />
+              <Astronaught
+                activeObject={activeObject}
+                setActiveObject={setActiveObject}
+                modal={modal}
+                setModal={setModal}
+              />
             </mesh>
           </Float>
         </PresentationControls>

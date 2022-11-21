@@ -24,6 +24,10 @@ const Footer = ({
     setModal({ ...modal, open: false });
     setActiveObject(navList[activeObject]);
     handleZoom(navList[activeObject]);
+    setModal({
+      open: !modal.open,
+      position: [-190, 30, -155],
+    });
     e.stopPropagation();
   };
 

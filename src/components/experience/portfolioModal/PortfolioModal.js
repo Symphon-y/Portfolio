@@ -16,7 +16,7 @@ const PortfolioModal = ({
 }) => {
   const [clicked, setClicked] = useState(false);
   const content = () => {
-    switch (modal.activeObject) {
+    switch (activeObject) {
       case 'PHONE':
         return <LingoLingo />;
       case 'SHOE':
