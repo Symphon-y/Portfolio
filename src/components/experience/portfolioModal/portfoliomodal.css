@@ -1,3 +1,25 @@
+/* Public Sans - Regular*/
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  src: url('../../../assets/fonts/public-sans/PublicSans-Regular.ttf');
+}
+
+/* Public Sans - Bold */
+@font-face {
+  font-family: 'Public Sans';
+  font-style: bold;
+  src: url('../../../assets/fonts/public-sans/PublicSans-Bold.ttf');
+}
+
+
+/* Fire Code */
+@font-face {
+  font-family: 'Fire Code';
+  font-style: thin;
+  src: url('../../../assets/fonts/FiraCode/FiraCode-Light.ttf');
+  }
+
 /* Worksans - Thin */
 @font-face {
   font-family: 'Work Sans';

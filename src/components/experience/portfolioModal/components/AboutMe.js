@@ -2,6 +2,11 @@ import BtnPrimary from '../../../shared/BtnPrimary';
 import Header from './Header';
 import Github from './logos/Github';
 import SupernovaLogo from './logos/SupernovaLogo';
+import MongoDBStatic from './logos/techstack/MongoDBStatic';
+import NodeStatic from './logos/techstack/NodeStatic';
+import PostgreSQLStatic from './logos/techstack/PostgreSQLStatic';
+import ReactStatic from './logos/techstack/ReactStatic';
+import ThreeStatic from './logos/techstack/ThreeStatic';
 
 const AboutMe = () => {
   return (
@@ -26,9 +31,13 @@ const AboutMe = () => {
               }}>
               Full Stack Engineer
             </h2>
-            <h3 style={{ marginTop: '0rem', marginLeft: '.2rem' }}>
-              Tech Stack: React, R3F, 3JS, PostgreSQL, MongoDB, Express, Node.js
-            </h3>
+            <div style={{ marginTop: '0rem', marginLeft: '.2rem' }}>
+              <ReactStatic />
+              <ThreeStatic />
+              <NodeStatic />
+              <MongoDBStatic />
+              <PostgreSQLStatic />
+            </div>
           </div>
         </div>
         <BtnPrimary
