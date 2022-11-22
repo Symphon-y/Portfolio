@@ -17,7 +17,7 @@ import Particles from '../particles/Particles';
 import { useContext, useRef } from 'react';
 import Iphone from '../iphone/Iphone';
 import Shoe from '../shoe/Shoe';
-import Supernova from '../project-supernova/supernova';
+import Supernova from '../project-supernova/Supernova';
 import Astronaught from '../astronaught/Astronaught';
 import useWindowDimensions from '../../hooks/useWindowDiminsions';
 

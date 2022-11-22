@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import './portfoliomodal.css';
 import { useState } from 'react';
 import LingoLingo from './components/LingoLingo';
+import SoleInc from './components/SoleInc';
+import SupernovaInfo from './components/SupernovaInfo';
 
 const PortfolioModal = ({
   handleZoom,
@@ -20,7 +22,9 @@ const PortfolioModal = ({
       case 'PHONE':
         return <LingoLingo />;
       case 'SHOE':
-        return <div>SHOE</div>;
+        return <SoleInc />;
+      case 'PLANET':
+        return <SupernovaInfo />;
       default:
         return <div>default</div>;
     }

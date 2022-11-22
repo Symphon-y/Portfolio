@@ -25,12 +25,14 @@ const Iframe = ({ activeObject, handleZoom, handleUnzoom }) => {
       }}
       className={'i-container'}>
       <BrowserHeader />
-      <Header />
-      <Contact />
-      <Activities />
-      <Projects />
-      <Publications />
-      <Education />
+      <div style={{ paddingLeft: '2rem' }}>
+        <Header />
+        <Contact />
+        <Activities />
+        <Projects />
+        <Publications />
+        <Education />
+      </div>
     </div>
   );
 };

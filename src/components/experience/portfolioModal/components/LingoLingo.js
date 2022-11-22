@@ -8,7 +8,7 @@ const LingoLingo = () => {
     <>
       <Header>
         <div className='info-stack'>
-          <h3 style={{ marginTop: '0rem' }}>Role: Full Stack Developer</h3>
+          <h3 style={{ marginTop: '0rem' }}>Role: Full Stack Engineer</h3>
         </div>
         <LingoLogo />
         <BtnPrimary
@@ -19,8 +19,6 @@ const LingoLingo = () => {
               'https://github.com/Team-Scar/Lingo-Lingo#readme',
               '_blank'
             );
-
-            // window.location.href = 'https://github.com/Team-Scar/Lingo-Lingo';
           }}>
           <div
             style={{
