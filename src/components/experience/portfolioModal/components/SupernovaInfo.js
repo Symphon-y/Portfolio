@@ -46,7 +46,6 @@ const SupernovaInfo = () => {
           deployed multiple server instances behind a load balancer.
         </p>
         <h2 style={{ alignSelf: 'flex-start' }}>Questions Endpoint:</h2>
-
         <img
           className='portfolio-gif'
           src='https://i.imgur.com/NqLO2UZ.png'
