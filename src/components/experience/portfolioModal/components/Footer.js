@@ -72,7 +72,7 @@ const Footer = ({
       style = { backgroundColor: '#80dbd8' };
       break;
     case 'PLANET':
-      style = { backgroundColor: '#80dbd8' };
+      style = { backgroundColor: '#EF3B46' };
       break;
   }
 
