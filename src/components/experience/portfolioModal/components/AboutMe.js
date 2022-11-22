@@ -3,14 +3,34 @@ import Header from './Header';
 import Github from './logos/Github';
 import SupernovaLogo from './logos/SupernovaLogo';
 
-const SupernovaInfo = () => {
+const AboutMe = () => {
   return (
     <>
       <Header>
-        <div className='info-stack'>
-          <h3 style={{ marginTop: '0rem' }}>Role: Full Stack Engineer</h3>
+        <div className='info-stack'></div>
+        <div className='aboutme-header-container'>
+          <img
+            className='avatar'
+            src='https://avatars.githubusercontent.com/u/90964291?v=4?s=100'
+            alt='sole inc logo'
+          />
+          <div className='aboutme-header-info-container'>
+            <h1 style={{ marginBottom: '0rem', marginLeft: '.2rem' }}>
+              Travis R. Redden
+            </h1>
+            <h2
+              style={{
+                marginTop: '0rem',
+                marginBottom: '.5rem',
+                marginLeft: '.2rem',
+              }}>
+              Full Stack Engineer
+            </h2>
+            <h3 style={{ marginTop: '0rem', marginLeft: '.2rem' }}>
+              Tech Stack: React, R3F, 3JS, PostgreSQL, MongoDB, Express, Node.js
+            </h3>
+          </div>
         </div>
-        <SupernovaLogo style={{ width: '30rem' }} />
         <BtnPrimary
           className={'btn-primary github'}
           style={{ backgroundColor: '#EF3B46' }}
@@ -71,4 +91,4 @@ const SupernovaInfo = () => {
   );
 };
 
-export default SupernovaInfo;
+export default AboutMe;

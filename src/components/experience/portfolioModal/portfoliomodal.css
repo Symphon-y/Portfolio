@@ -217,20 +217,25 @@
   border:1px solid red
 } */
 
-h1, h3 {
+h1, h2, h3 {
   font-family: 'Work Sans';
   font-size: 1.568rem;
   font-weight: 500;
   color: black;
   margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 h3 {
   margin-bottom: 0rem;
   font-weight: 200;
 
-  font-size: .9rem;
+  font-size: 1rem;
   color: rgba(0, 0, 0, .5);
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 1.5rem;
 }
 
 p, li {
@@ -239,6 +244,7 @@ p, li {
   font-weight: 200;
   color: rgba(0, 0, 0, .5);
   margin-top: 0rem;
+  margin-bottom: 1rem;
 }
 .modal-container {
   display: flex;
@@ -328,6 +334,7 @@ p, li {
   width: 24.4rem;
   object-fit: contain;
   border-radius: 10.56px;
+  margin-bottom: 1.5rem;
   box-shadow: 2px 5px 5px rgba(0, 0, 0, .2);
 }
 .footer-container {
@@ -386,4 +393,29 @@ button {
   width: 14rem;
   margin-top: 1.2rem;
   height: 3.35rem;
+}
+
+.aboutme-header-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.aboutme-header-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.avatar {
+  margin-top: 1.5rem;
+  width: 10.35rem;
+  height: 10.35rem;
+  object-fit: contain;
+  border-radius: 100%;
+  border-radius: 10.56px;
+  margin-bottom: 1.5rem;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, .2);
 }

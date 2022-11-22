@@ -7,6 +7,7 @@ import { useState } from 'react';
 import LingoLingo from './components/LingoLingo';
 import SoleInc from './components/SoleInc';
 import SupernovaInfo from './components/SupernovaInfo';
+import AboutMe from './components/AboutMe';
 
 const PortfolioModal = ({
   handleZoom,
@@ -25,6 +26,8 @@ const PortfolioModal = ({
         return <SoleInc />;
       case 'PLANET':
         return <SupernovaInfo />;
+      case 'SPACEMAN':
+        return <AboutMe />;
       default:
         return <div>default</div>;
     }
