@@ -1,13 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.68cf255b.css",
-    "main.js": "/static/js/main.a923d840.js",
+    "main.css": "/static/css/main.3e5675f0.css",
+    "main.js": "/static/js/main.33892cda.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/WorkSans-Medium.ttf": "/static/media/WorkSans-Medium.f1dd9ac4126d93c6baeb.ttf",
+    "static/media/WorkSans-SemiBold.ttf": "/static/media/WorkSans-SemiBold.8988ce2e3e8957a63db8.ttf",
+    "static/media/WorkSans-ExtraBold.ttf": "/static/media/WorkSans-ExtraBold.d221515a328f2d7c21c7.ttf",
+    "static/media/WorkSans-Bold.ttf": "/static/media/WorkSans-Bold.aa43e32a4b4e4ffe0942.ttf",
+    "static/media/WorkSans-Light.ttf": "/static/media/WorkSans-Light.1ca2c48a9aa9f5cb1e30.ttf",
+    "static/media/WorkSans-Regular.ttf": "/static/media/WorkSans-Regular.ca211a55c3d9d8690c63.ttf",
+    "static/media/WorkSans-Black.ttf": "/static/media/WorkSans-Black.6d1eb44447a907477ba6.ttf",
+    "static/media/WorkSans-Thin.ttf": "/static/media/WorkSans-Thin.336700fa8bf1eb9f510d.ttf",
+    "static/media/FiraCode-Light.ttf": "/static/media/FiraCode-Light.910fe317641cda8d1601.ttf",
     "static/media/lato-v23-latin-700.svg": "/static/media/lato-v23-latin-700.cc811f1fa3b8c61938ed.svg",
     "static/media/lato-v23-latin-regular.svg": "/static/media/lato-v23-latin-regular.335643de538753a2982a.svg",
     "static/media/lato-v23-latin-300.svg": "/static/media/lato-v23-latin-300.d7f9c1f785ffad2b05b3.svg",
     "static/media/lato-v23-latin-300.ttf": "/static/media/lato-v23-latin-300.f00fd9f76f8b8ac0d2bb.ttf",
     "static/media/lato-v23-latin-regular.ttf": "/static/media/lato-v23-latin-regular.cf2315b218ab9f01217d.ttf",
+    "static/media/PublicSans-Bold.ttf": "/static/media/PublicSans-Bold.f0a9b8f70097795ff146.ttf",
+    "static/media/PublicSans-Regular.ttf": "/static/media/PublicSans-Regular.4923208255b32cd2980c.ttf",
     "static/media/lato-v23-latin-700.ttf": "/static/media/lato-v23-latin-700.c94e49f689e148931a36.ttf",
     "static/media/oswald-v49-latin-700.svg": "/static/media/oswald-v49-latin-700.2ee89e31df869fba917d.svg",
     "static/media/oswald-v49-latin-600.svg": "/static/media/oswald-v49-latin-600.73a4868eb3305885cabd.svg",
@@ -49,12 +60,12 @@
     "static/media/oswald-v49-latin-200.woff2": "/static/media/oswald-v49-latin-200.988c3eb49827a1e74c78.woff2",
     "static/media/oswald-v49-latin-regular.woff2": "/static/media/oswald-v49-latin-regular.37ffdd2667b8a0045f0d.woff2",
     "index.html": "/index.html",
-    "main.68cf255b.css.map": "/static/css/main.68cf255b.css.map",
-    "main.a923d840.js.map": "/static/js/main.a923d840.js.map",
+    "main.3e5675f0.css.map": "/static/css/main.3e5675f0.css.map",
+    "main.33892cda.js.map": "/static/js/main.33892cda.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.68cf255b.css",
-    "static/js/main.a923d840.js"
+    "static/css/main.3e5675f0.css",
+    "static/js/main.33892cda.js"
   ]
 }
