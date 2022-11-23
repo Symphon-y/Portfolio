@@ -7,13 +7,13 @@ import Education from './components/Education';
 
 import './Iframe.css';
 import { useState } from 'react';
+import BrowserHeader from './components/BrowserHeader';
 
 const Iframe = ({ activeObject, handleZoom, handleUnzoom }) => {
   const [clicked, setClicked] = useState(false);
   return (
     <div
       onClick={(e) => {
-        console.log(activeObject);
         e.stopPropagation();
         if (!clicked) {
           handleZoom('SCREEN');
@@ -24,12 +24,15 @@ const Iframe = ({ activeObject, handleZoom, handleUnzoom }) => {
         }
       }}
       className={'i-container'}>
-      <Header />
-      <Contact />
-      <Activities />
-      <Projects />
-      <Publications />
-      <Education />
+      <BrowserHeader />
+      <div style={{ paddingLeft: '2rem' }}>
+        <Header />
+        <Contact />
+        <Activities />
+        <Projects />
+        <Publications />
+        <Education />
+      </div>
     </div>
   );
 };

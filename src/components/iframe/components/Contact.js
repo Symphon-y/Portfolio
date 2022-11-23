@@ -1,7 +1,7 @@
 const Contact = () => {
   return (
     <div className='section contact'>
-      <h1 className='title subheading'>CONTACT</h1>
+      <h1 className='title subheading'>// CONTACT:</h1>
       <div className='list contact'>
         <a
           className='button'

@@ -1,7 +1,7 @@
 const Publications = () => {
   return (
     <div className='section publications'>
-      <h1 className='title subheading publication-title'>PUBLICATIONS</h1>
+      <h1 className='title subheading publication-title'>// PUBLICATIONS: </h1>
       <div className='article-container'>
         <a
           className='button article'

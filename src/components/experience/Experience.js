@@ -5,26 +5,33 @@ import {
   PresentationControls,
   ContactShadows,
   RandomizedLight,
+  Billboard,
+  Html,
 } from '@react-three/drei';
 import Laptop from '../laptop/Laptop';
 import Coffee from '../coffee/Coffee';
 import Keyboard from '../keyboard/KeyboardTwo';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useThree } from '@react-three/fiber';
 import { KeyboardContextProvider } from '../../context/KeyboardContextProvider';
 import Particles from '../particles/Particles';
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
 import Iphone from '../iphone/Iphone';
 import Shoe from '../shoe/Shoe';
-import Supernova from '../project-supernova/supernova';
+import Supernova from '../project-supernova/Supernova';
 import Astronaught from '../astronaught/Astronaught';
 import useWindowDimensions from '../../hooks/useWindowDiminsions';
-import {
-  DepthOfField,
-  EffectComposer,
-  Vignette,
-} from '@react-three/postprocessing';
+
+import { useEffect } from 'react';
+import useModal from '../../hooks/useModal';
+import { ZoomContextProvider } from '../../context/ZoomContextProvider';
+import PortfolioModal from './portfolioModal/PortfolioModal';
+import PopUpModal from './portfolioModal/PopUpModal';
+import { ZoomContext } from '../../context/ZoomContext';
 
 const Experience = () => {
+  // const { modal, setModal, popUpModal } = useModal();
+  const { activeObject, setActiveObject, modal, setModal } =
+    useContext(ZoomContext);
   const { width, height } = useWindowDimensions();
 
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -56,6 +63,8 @@ const Experience = () => {
         config alters the internal Spring library animation settings #jiggle-physics
         snap returns the object to its initial position */}
         {/* <Bounds fit={false} observe={false} damping={4} margin={1}> */}
+        {/* {popUpModal()} */}
+        <PopUpModal modal={modal} setModal={setModal} />
         <PresentationControls
           global
           rotation={[0.13, 0.5, 0]}
@@ -95,7 +104,7 @@ const Experience = () => {
               scale={-0.4}
               rotation-x={Math.PI * 0.85}
               rotation-y={Math.PI * 0.25}>
-              <Coffee />
+              <Coffee modal={modal} setModal={setModal} />
             </mesh>
             {/* Adds Keyboard Mesh */}
             <mesh
@@ -126,7 +135,12 @@ const Experience = () => {
               rotation-y={Math.PI * 0.3}
               rotation-x={Math.PI * -0.25}
               rotation-z={Math.PI * 0.15}>
-              <Iphone />
+              <Iphone
+                activeObject={activeObject}
+                setActiveObject={setActiveObject}
+                modal={modal}
+                setModal={setModal}
+              />
             </mesh>
             <mesh
               position={[-4.2, -0.75, -5]}
@@ -134,7 +148,12 @@ const Experience = () => {
               rotation-y={Math.PI * 0.75}
               rotation-x={Math.PI * -0.25}
               rotation-z={Math.PI * 0.15}>
-              <Shoe />
+              <Shoe
+                activeObject={activeObject}
+                setActiveObject={setActiveObject}
+                modal={modal}
+                setModal={setModal}
+              />
             </mesh>
             <mesh
               position={[-11.26, 1.0, -25]}
@@ -142,7 +161,12 @@ const Experience = () => {
               rotation-y={Math.PI * 0.75}
               rotation-x={Math.PI * -0.25}
               rotation-z={Math.PI * 0.15}>
-              <Supernova />
+              <Supernova
+                activeObject={activeObject}
+                setActiveObject={setActiveObject}
+                modal={modal}
+                setModal={setModal}
+              />
             </mesh>
             <mesh
               position={[19.5, 5.5, -5]}
@@ -150,7 +174,12 @@ const Experience = () => {
               rotation-y={Math.PI * -0.33}
               rotation-x={Math.PI * 0.28}
               rotation-z={Math.PI * 0.4}>
-              <Astronaught />
+              <Astronaught
+                activeObject={activeObject}
+                setActiveObject={setActiveObject}
+                modal={modal}
+                setModal={setModal}
+              />
             </mesh>
           </Float>
         </PresentationControls>

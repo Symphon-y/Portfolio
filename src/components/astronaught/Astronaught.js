@@ -2,7 +2,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 import useZoom from '../../hooks/useZoom';
 
-const Astronaught = (props) => {
+const Astronaught = ({
+  activeObject,
+  setActiveObject,
+  modal,
+  setModal,
+  ...props
+}) => {
   const group = useRef();
   const [clicked, isClicked] = useState(false);
   const { handleZoom, handleUnzoom } = useZoom();
@@ -15,23 +21,34 @@ const Astronaught = (props) => {
     console.log(animations);
     actions.Animation.play();
   });
+  useEffect(() => {
+    if (activeObject === 'SPACEMAN' && !modal.open) {
+      setModal({
+        open: !modal.open,
+        position: [110, 78.0, -70],
+      });
+    }
+  }, [modal.open, setModal, activeObject]);
   return (
     <group
       ref={group}
       {...props}
       dispose={null}
       onClick={() => {
-        if (clicked) {
-          handleUnzoom();
-          isClicked(!clicked);
-        } else {
+        if (!modal.open) {
           handleZoom('SPACEMAN');
-          isClicked(!clicked);
+          setModal({
+            open: !modal.open,
+            position: [110, 78.0, -70],
+          });
+        } else {
+          handleUnzoom();
+          setModal({ ...modal, open: false });
         }
       }}
       onPointerMissed={() => {
         handleUnzoom();
-        isClicked(false);
+        setModal({ ...modal, open: false });
       }}>
       <group name='Sketchfab_Scene'>
         <group

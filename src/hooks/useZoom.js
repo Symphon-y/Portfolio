@@ -1,12 +1,13 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useContext, useEffect } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { POSITIONS, ROTATIONS } from '../types/constants';
 import * as TWEEN from '@tweenjs/tween.js';
+import { ZoomContext } from '../context/ZoomContext';
 
 const useZoom = () => {
-  const [activeObject, setActiveObject] = useState('DEFAULT_CAMERA');
+  // const [activeObject, setActiveObject] = useState('DEFAULT_CAMERA');
   const camera = useThree((state) => state.camera);
-
+  const { activeObject, setActiveObject } = useContext(ZoomContext);
   useFrame(() => {
     TWEEN.update();
   });
@@ -38,7 +39,7 @@ const useZoom = () => {
         .easing(TWEEN.Easing.Quadratic.InOut)
         .start();
     },
-    [activeObject, camera.position, camera.rotation]
+    [activeObject, setActiveObject, camera.position, camera.rotation]
   );
 
   const handleUnzoom = useCallback(() => {
@@ -65,7 +66,7 @@ const useZoom = () => {
       )
       .easing(TWEEN.Easing.Quadratic.InOut)
       .start();
-  }, [camera.position, camera.rotation]);
+  }, [setActiveObject, camera.position, camera.rotation]);
 
   return {
     activeObject,

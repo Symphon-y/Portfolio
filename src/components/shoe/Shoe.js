@@ -1,18 +1,40 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import useZoom from '../../hooks/useZoom';
 import Header from '../description/header';
 import Body from '../description/body';
 
-const Shoe = (props) => {
+const Shoe = ({ activeObject, setActiveObject, modal, setModal, ...props }) => {
   const { handleZoom, handleUnzoom } = useZoom();
   const { nodes, materials } = useGLTF('/nike_air_zoom_pegasus_36.glb');
+  useEffect(() => {
+    if (activeObject === 'SHOE' && !modal.open) {
+      setModal({
+        open: !modal.open,
+        position: [-190, 30, -155],
+      });
+    }
+  }, [modal.open, setModal, activeObject]);
   return (
     <group
       {...props}
       dispose={null}
-      onClick={() => handleZoom('SHOE')}
-      onPointerMissed={() => handleUnzoom()}>
+      onClick={() => {
+        if (!modal.open) {
+          handleZoom('SHOE');
+          setModal({
+            open: !modal.open,
+            position: [-190, 30, -155],
+          });
+        } else {
+          handleUnzoom();
+          setModal({ ...modal, open: false });
+        }
+      }}
+      onPointerMissed={() => {
+        handleUnzoom();
+        setModal({ ...modal, open: false });
+      }}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <mesh
@@ -23,20 +45,6 @@ const Shoe = (props) => {
           />
         </group>
       </group>
-      <Header>TEST</Header>
-      <Body>
-        An online language exchange platform consisting of a forum, chat
-        feature, and event scheduler. ● Lead a team of eight engineers.
-        Organized and officiated daily stand-ups, maintained trello ticketing
-        system, and ensured the execution of a unified project vision. ●
-        Organized front end codebase with React while maintaining a structured
-        separation of concerns between components. ● Created dynamic header with
-        content filtering feature in React to facilitate the users ability to
-        search forum cards. ● Constructed sidebar with React consisting of drop
-        down menus and dynamic links to provide website navigation. ● Designed
-        wireframe and mockup in figma in order to facilitate the implementation
-        of front end styling conventions
-      </Body>
     </group>
   );
 };
