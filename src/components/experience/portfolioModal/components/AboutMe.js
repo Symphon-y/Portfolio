@@ -1,7 +1,9 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import BtnPrimary from '../../../shared/BtnPrimary';
 import Header from './Header';
 import Github from './logos/Github';
-import SupernovaLogo from './logos/SupernovaLogo';
+import LinkedIn from './logos/LinkedIn';
+import MailIcon from './logos/MailIcon';
 import MongoDBStatic from './logos/techstack/MongoDBStatic';
 import NodeStatic from './logos/techstack/NodeStatic';
 import PostgreSQLStatic from './logos/techstack/PostgreSQLStatic';
@@ -20,81 +22,129 @@ const AboutMe = () => {
             alt='sole inc logo'
           />
           <div className='aboutme-header-info-container'>
-            <h1 style={{ marginBottom: '0rem', marginLeft: '.2rem' }}>
-              Travis R. Redden
-            </h1>
-            <h2
-              style={{
-                marginTop: '0rem',
-                marginBottom: '.5rem',
-                marginLeft: '.2rem',
-              }}>
-              Full Stack Engineer
-            </h2>
-            <div style={{ marginTop: '0rem', marginLeft: '.2rem' }}>
-              <ReactStatic />
-              <ThreeStatic />
-              <NodeStatic />
-              <MongoDBStatic />
-              <PostgreSQLStatic />
+            <h3>Hi all! I am</h3>
+            <h1 style={{ fontSize: '2.614rem' }}>Travis Redden</h1>
+            <h2>>Full Stack Engineer</h2>
+            <div className='tech-stack-static-container'>
+              <ReactStatic style={{ scale: '.95' }} />
+              <ThreeStatic style={{ scale: '.95', marginLeft: '.7rem' }} />
+              <NodeStatic style={{ scale: '.95', marginLeft: '.7rem' }} />
+              <MongoDBStatic style={{ scale: '.95', marginLeft: '.7rem' }} />
+              <PostgreSQLStatic style={{ scale: '.95', marginLeft: '.7rem' }} />
             </div>
           </div>
         </div>
-        <BtnPrimary
-          className={'btn-primary github'}
-          style={{ backgroundColor: '#EF3B46' }}
-          onClick={(e) => {
-            e.stopPropagation();
-            window.open(
-              'https://github.com/FECTatooine/Questions_and_Answers#readme',
-              '_blank'
-            );
-          }}>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'space-evenly',
-              alignItems: 'center',
-            }}>
-            <Github style={{ width: '2rem' }} />
-            View On Github
-          </div>
-        </BtnPrimary>
       </Header>
       <div className='modal-body'>
-        <h1 style={{ alignSelf: 'flex-start' }}>About:</h1>
+        <h1 style={{ fontSize: '1.5rem', alignSelf: 'flex-start' }}>
+          // About:
+        </h1>
         <p>
-          Previously our team was tasked with creating a complete redesign of an
-          outdated client-facing retail web-portal including but not limited to
-          branding, and website functionality. This project comprises a complete
-          redesign of the back-end architecture for that retail portal intended
-          to address the client's concerns of speed and scalability. To address
-          these concerns I indexed our tables, used nested SQL queries to
-          aggrigate data into json objects, and deployed multiple server
-          instances behind a load balancer.
+          Thanks so much for stopping by. I'm Travis, a full stack software
+          engineer based somewhere in the woods between Austin and Houston
+          Texas. I'm a 90s kid brought up on Power Rangers, Lunchables, and
+          Caprisun. In 1998, I broke my first computer (sorry mom and dad) and
+          have had a passion for coding ever since. I'm an obsessive learner and
+          I'm constantly challenging myself to expand my knowledge by diving
+          headlong into the newest technologies.
         </p>
-        <h1 style={{ alignSelf: 'flex-start' }}>Questions Endpoint:</h1>
+        <div className='aboutme-image-container'>
+          <img
+            className='portfolio-gif aboutme-pic'
+            src='https://i.imgur.com/bne2uoH.jpg'
+            alt='Questions Endpoint Results'
+          />
+          <img
+            className='portfolio-gif aboutme-pic'
+            src='https://i.imgur.com/udap2Kc.jpg'
+            alt='Questions Endpoint Results'
+          />
+          <img
+            className='portfolio-gif aboutme-pic'
+            src='https://i.imgur.com/NCcVQPf.jpg'
+            alt='Questions Endpoint Results'
+          />
+        </div>
+        <p>
+          I have a masters degree from Sam Houston State University (EAT EM UP,
+          KATS!) and in my spare time I enjoy Renaissance fairs, archery,
+          kayaking, and composing music.
+        </p>
         <img
-          className='portfolio-gif'
-          src='https://i.imgur.com/NqLO2UZ.png'
+          className='portfolio-gif aboutme-video'
+          src='https://media.giphy.com/media/5hMgvzES8FgudyP3UJ/giphy.gif'
           alt='Questions Endpoint Results'
         />
+        <h1 style={{ alignSelf: 'flex-start' }}>// Connect:</h1>
+
         <p>
-          At 1k RPS (one thousand requests per second) the response time for the
-          questions endpoint was reduced from 293ms to 6ms.
+          If you got this far, I'd love to hear from you! Check out my links
+          below and say hi!
         </p>
-        <h1 style={{ alignSelf: 'flex-start' }}>Answers Endpoint:</h1>
-        <img
-          className='portfolio-gif'
-          src='https://i.imgur.com/4t2eiHZ.png'
-          alt='Answers Endpoint Results'
-        />
-        <p>
-          Similarly the response time for the answers endpoint was reduced from
-          377ms to 6ms and the average error rate was able to be lowered from
-          68.33% and 39.26% to 0% respectively.
-        </p>
+        <div className='aboutme-footer'>
+          <BtnPrimary
+            className={'btn-primary github'}
+            onClick={(e) => {
+              e.stopPropagation();
+              window.open('https://github.com/Symphon-y', '_blank');
+            }}>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginRight: '1rem',
+                marginLeft: '1rem',
+              }}>
+              <Github style={{ width: '2rem' }} />
+              View My Github
+            </div>
+          </BtnPrimary>
+          <BtnPrimary
+            className={'btn-primary github'}
+            onClick={(e) => {
+              e.stopPropagation();
+              window.open(
+                'https://www.linkedin.com/in/travisredden/',
+                '_blank'
+              );
+            }}>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-evenly',
+                alignItems: 'center',
+                marginRight: '1rem',
+                marginLeft: '1rem',
+              }}>
+              <LinkedIn
+                style={{ fill: 'white', scale: '1.2', width: '2rem' }}
+              />
+              LinkedIn
+            </div>
+          </BtnPrimary>
+          <BtnPrimary
+            className={'btn-primary github'}
+            onClick={(e) => {
+              e.stopPropagation();
+              window.open('mailto:travisredden@outlook.com', '_blank');
+            }}>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-evenly',
+                alignItems: 'center',
+                marginRight: '1rem',
+                marginLeft: '1rem',
+              }}>
+              <MailIcon style={{ fill: 'white', scale: '.9', width: '2rem' }} />
+              Email
+            </div>
+          </BtnPrimary>
+        </div>
       </div>
     </>
   );

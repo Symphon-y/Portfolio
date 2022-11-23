@@ -1,7 +1,7 @@
 const Education = () => {
   return (
     <div className='section section-education'>
-      <h1 className='title subheading education'>EDUCATION</h1>
+      <h1 className='title subheading education'>// EDUCATION: </h1>
       <div className='list'>
         <div className='projects-container'>
           <a

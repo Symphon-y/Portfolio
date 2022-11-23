@@ -1,7 +1,7 @@
 const Projects = () => {
   return (
     <div className='section section-projects'>
-      <h1 className='title subheading projects'>PROJECTS</h1>
+      <h1 className='title subheading projects'>// PROJECTS:</h1>
       <div className='list'>
         <div className='projects-container'>
           <a

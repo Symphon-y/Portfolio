@@ -33,7 +33,7 @@ const LingoLingo = () => {
         </BtnPrimary>
       </Header>
       <div className='modal-body'>
-        <h1 style={{ alignSelf: 'flex-start' }}>About:</h1>
+        <h1 style={{ alignSelf: 'flex-start' }}>// About:</h1>
         <p>
           Our team was tasked with the development and design of an online
           language exchange platform consisting of a forum, chat feature, and
@@ -47,7 +47,7 @@ const LingoLingo = () => {
           src='https://media.giphy.com/media/kuLrkcF0EugfYxKq50/giphy.gif'
           alt='sign up gif'
         />
-        <h1 style={{ alignSelf: 'flex-start' }}>Components:</h1>
+        <h1 style={{ alignSelf: 'flex-start' }}>// Components:</h1>
         <p>
           This section provides a broad overview of just a few of the exciting
           functionalities our team implemented for the Lingo Lingo web platform.
@@ -55,37 +55,37 @@ const LingoLingo = () => {
         <ul>
           <li>
             User authentication: New end-users are required to create a user
-            account with log-in details. Upon opening the app, the user will be
-            prompted to provide their log-in details if not already logged in,
-            and/or create a new user account in order to access the app’s
-            functionalities.
+            account with log-in details. Upon opening the app, the user is
+            prompted to provide their log-in details if they are not already
+            logged in, and/or create a new user account in order to access the
+            app’s functionalities.
           </li>
           <li>
-            Forum Category Filtering: The user will have the optserion to filter
-            the topics they wish to view by category, or by clicking on any of
-            the module tags on the module description.
+            Forum Category Filtering: The user ahs the option to filter the
+            topics they wish to view by category, or by clicking on any of the
+            module tags on the module description.
           </li>
           <li>
-            Viewing a Forum Post: When users click on a post it will bring up
-            the details of the post and associated responses, allowing the users
-            to interact.
+            Viewing a Forum Post: When users click on a post it opens the
+            details of the post and associated responses, allowing the users to
+            interact.
           </li>
           <li>
-            Live Chat Feature: Will allow users to chat with individual users
-            directly. Will have a log of all previous conversations and display
-            a list of all connections.
+            Live Chat Feature: Allows users to chat with each other directly.
+            Has a log of all previous conversations and displays a list of all
+            connections.
           </li>
           <li>
-            Events: Will allow users to schedule and announce an event. Events
-            will be clickable to display the event detail and allow the user to
-            save it to their calendar.
+            Events: Allows users to schedule and announce an event. Events are
+            clickable to display the event details and allow the user to save it
+            to their calendar.
           </li>
           <li>
-            Profiles: User profiles will consist of a brief bio, languages the
-            user wants to learn, current languages the user speaks, the topics
-            they are interested in, and the ability to start a chat with that
-            user. The user will have the ability to add other users to their
-            connections list. The user will be able to modify their own profile.
+            Profiles: User profiles consist of a brief bio, languages the user
+            wants to learn, current languages the user speaks, the topics they
+            are interested in, and the ability to start a chat with the selected
+            user. The user has the ability to add other users to their
+            connections list and is able to modify their own profile.
           </li>
         </ul>
       </div>

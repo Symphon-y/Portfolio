@@ -15,15 +15,15 @@ const Coffee = ({ modal, setModal }) => {
         onClick={() => {
           if (!modal.open) {
             handleZoom('COFFEE');
-            setModal({ open: !modal.open, position: [5, 3.55, -3] });
+            // setModal({ open: !modal.open, position: [5, 3.55, -3] });
           } else {
             handleUnzoom();
-            setModal({ ...modal, open: false });
+            // setModal({ ...modal, open: false });
           }
         }}
         onPointerMissed={() => {
           handleUnzoom();
-          setModal({ ...modal, open: false });
+          // setModal({ ...modal, open: false });
         }}
         name='coffee'
         geometry={nodes.Cup.geometry}
@@ -32,15 +32,15 @@ const Coffee = ({ modal, setModal }) => {
           onClick={() => {
             if (!modal.open) {
               handleZoom('COFFEE');
-              setModal({ open: !modal.open, position: [5, 3.55, -3] });
+              // setModal({ open: !modal.open, position: [5, 3.55, -3] });
             } else {
               handleUnzoom();
-              setModal({ ...modal, open: false });
+              // setModal({ ...modal, open: false });
             }
           }}
           onPointerMissed={() => {
             handleUnzoom();
-            setModal({ ...modal, open: false });
+            // setModal({ ...modal, open: false });
           }}
           name='coffee'
           geometry={nodes.Cube.geometry}

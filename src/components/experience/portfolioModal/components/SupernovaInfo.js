@@ -34,7 +34,7 @@ const SupernovaInfo = () => {
         </BtnPrimary>
       </Header>
       <div className='modal-body'>
-        <h1 style={{ alignSelf: 'flex-start' }}>About:</h1>
+        <h1 style={{ alignSelf: 'flex-start' }}>// About:</h1>
         <p>
           Previously our team was tasked with creating a complete redesign of an
           outdated client-facing retail web-portal including but not limited to
@@ -45,7 +45,7 @@ const SupernovaInfo = () => {
           aggrigate data into json objects, and deployed multiple server
           instances behind a load balancer.
         </p>
-        <h1 style={{ alignSelf: 'flex-start' }}>Questions Endpoint:</h1>
+        <h1 style={{ alignSelf: 'flex-start' }}>// Questions Endpoint:</h1>
         <img
           className='portfolio-gif'
           src='https://i.imgur.com/NqLO2UZ.png'
@@ -55,7 +55,7 @@ const SupernovaInfo = () => {
           At 1k RPS (one thousand requests per second) the response time for the
           questions endpoint was reduced from 293ms to 6ms.
         </p>
-        <h1 style={{ alignSelf: 'flex-start' }}>Answers Endpoint:</h1>
+        <h1 style={{ alignSelf: 'flex-start' }}>// Answers Endpoint:</h1>
         <img
           className='portfolio-gif'
           src='https://i.imgur.com/4t2eiHZ.png'

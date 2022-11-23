@@ -1,7 +1,7 @@
 const Activities = () => {
   return (
     <div className='section activities-container'>
-      <h1 className='title subheading activities'>ACTIVITIES</h1>
+      <h1 className='title subheading activities'>// ACTIVITIES:</h1>
       <div className='list'>
         <div className='item'>
           <div className='name'>FREELANCER</div>

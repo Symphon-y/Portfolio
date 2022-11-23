@@ -240,24 +240,25 @@
 } */
 
 h1, h2, h3 {
-  font-family: 'Work Sans';
-  font-size: 1.568rem;
+  font-family: 'Public Sans';
+  font-size:  1.5rem;
   font-weight: 500;
   color: black;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
+  margin-top: 0.3rem;
+  margin-bottom: .3rem;
 }
 h3 {
-  margin-bottom: 0rem;
+  font-family: 'Fire Code';
   font-weight: 200;
-
-  font-size: 1rem;
-  color: rgba(0, 0, 0, .5);
+  font-size: 1.162rem;
+  color: #686A7A;
 }
 
 h2 {
+  font-family: 'Fire Code';
+  color: #4D5BCE;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.743rem;
 }
 
 p, li {
@@ -422,22 +423,58 @@ button {
   flex-direction: row;
   width: 100%;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;;
 }
 
 .aboutme-header-info-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   align-items: flex-start;
+  margin-left: 2.5rem;
 }
 .avatar {
   margin-top: 1.5rem;
-  width: 10.35rem;
-  height: 10.35rem;
+  width: 12.705rem;
+  height: 12.705rem;
   object-fit: contain;
   border-radius: 100%;
-  border-radius: 10.56px;
+  border-radius: 100%;
   margin-bottom: 1.5rem;
   box-shadow: 2px 5px 5px rgba(0, 0, 0, .2);
+}
+
+.tech-stack-static-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: .7rem;
+}
+
+.aboutme-image-container {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.aboutme-pic {
+  height: 11rem;
+  width: 11rem;
+  object-fit: cover;
+}
+
+.aboutme-video {
+  object-fit: cover;
+}
+
+.aboutme-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
 }
