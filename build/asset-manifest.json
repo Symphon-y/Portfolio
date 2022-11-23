@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.3e5675f0.css",
-    "main.js": "/static/js/main.33892cda.js",
+    "main.css": "/static/css/main.70c00282.css",
+    "main.js": "/static/js/main.8e4c6c69.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/WorkSans-Medium.ttf": "/static/media/WorkSans-Medium.f1dd9ac4126d93c6baeb.ttf",
     "static/media/WorkSans-SemiBold.ttf": "/static/media/WorkSans-SemiBold.8988ce2e3e8957a63db8.ttf",
@@ -12,20 +12,20 @@
     "static/media/WorkSans-Black.ttf": "/static/media/WorkSans-Black.6d1eb44447a907477ba6.ttf",
     "static/media/WorkSans-Thin.ttf": "/static/media/WorkSans-Thin.336700fa8bf1eb9f510d.ttf",
     "static/media/FiraCode-Light.ttf": "/static/media/FiraCode-Light.910fe317641cda8d1601.ttf",
-    "static/media/lato-v23-latin-700.svg": "/static/media/lato-v23-latin-700.cc811f1fa3b8c61938ed.svg",
-    "static/media/lato-v23-latin-regular.svg": "/static/media/lato-v23-latin-regular.335643de538753a2982a.svg",
-    "static/media/lato-v23-latin-300.svg": "/static/media/lato-v23-latin-300.d7f9c1f785ffad2b05b3.svg",
+    "static/media/lato-v23-latin-700.svg": "/static/media/lato-v23-latin-700.414efa6d77701ff12fc5.svg",
+    "static/media/lato-v23-latin-regular.svg": "/static/media/lato-v23-latin-regular.ec5307044f561bd0e346.svg",
+    "static/media/lato-v23-latin-300.svg": "/static/media/lato-v23-latin-300.956bf162043e0badc800.svg",
     "static/media/lato-v23-latin-300.ttf": "/static/media/lato-v23-latin-300.f00fd9f76f8b8ac0d2bb.ttf",
     "static/media/lato-v23-latin-regular.ttf": "/static/media/lato-v23-latin-regular.cf2315b218ab9f01217d.ttf",
     "static/media/PublicSans-Bold.ttf": "/static/media/PublicSans-Bold.f0a9b8f70097795ff146.ttf",
     "static/media/PublicSans-Regular.ttf": "/static/media/PublicSans-Regular.4923208255b32cd2980c.ttf",
     "static/media/lato-v23-latin-700.ttf": "/static/media/lato-v23-latin-700.c94e49f689e148931a36.ttf",
-    "static/media/oswald-v49-latin-700.svg": "/static/media/oswald-v49-latin-700.2ee89e31df869fba917d.svg",
-    "static/media/oswald-v49-latin-600.svg": "/static/media/oswald-v49-latin-600.73a4868eb3305885cabd.svg",
-    "static/media/oswald-v49-latin-500.svg": "/static/media/oswald-v49-latin-500.956de6aded6ee6f8e975.svg",
-    "static/media/oswald-v49-latin-regular.svg": "/static/media/oswald-v49-latin-regular.e7d727be909083b92305.svg",
-    "static/media/oswald-v49-latin-300.svg": "/static/media/oswald-v49-latin-300.fd090f5caddd35750807.svg",
-    "static/media/oswald-v49-latin-200.svg": "/static/media/oswald-v49-latin-200.55970bbef0ddf3cba815.svg",
+    "static/media/oswald-v49-latin-700.svg": "/static/media/oswald-v49-latin-700.20bafec7c61853e1daa9.svg",
+    "static/media/oswald-v49-latin-600.svg": "/static/media/oswald-v49-latin-600.c3aaa1e5618dcd491aa4.svg",
+    "static/media/oswald-v49-latin-500.svg": "/static/media/oswald-v49-latin-500.8b5075857da9d8bd5bdd.svg",
+    "static/media/oswald-v49-latin-regular.svg": "/static/media/oswald-v49-latin-regular.cda95197bdef1d58d592.svg",
+    "static/media/oswald-v49-latin-300.svg": "/static/media/oswald-v49-latin-300.1906186586ced8c81fe2.svg",
+    "static/media/oswald-v49-latin-200.svg": "/static/media/oswald-v49-latin-200.ab6d236384e243dafa23.svg",
     "static/media/lato-v23-latin-300.woff": "/static/media/lato-v23-latin-300.205544e89f4d1d47d849.woff",
     "static/media/lato-v23-latin-regular.woff": "/static/media/lato-v23-latin-regular.292725486219768e6225.woff",
     "static/media/lato-v23-latin-700.woff": "/static/media/lato-v23-latin-700.5cd24624b77e9c2f6555.woff",
@@ -60,12 +60,12 @@
     "static/media/oswald-v49-latin-200.woff2": "/static/media/oswald-v49-latin-200.988c3eb49827a1e74c78.woff2",
     "static/media/oswald-v49-latin-regular.woff2": "/static/media/oswald-v49-latin-regular.37ffdd2667b8a0045f0d.woff2",
     "index.html": "/index.html",
-    "main.3e5675f0.css.map": "/static/css/main.3e5675f0.css.map",
-    "main.33892cda.js.map": "/static/js/main.33892cda.js.map",
+    "main.70c00282.css.map": "/static/css/main.70c00282.css.map",
+    "main.8e4c6c69.js.map": "/static/js/main.8e4c6c69.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3e5675f0.css",
-    "static/js/main.33892cda.js"
+    "static/css/main.70c00282.css",
+    "static/js/main.8e4c6c69.js"
   ]
 }
