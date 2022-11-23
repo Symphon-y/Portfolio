@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router';
 import { routes } from './routes/routes';
 import { ZoomContextProvider } from './context/ZoomContextProvider';
+import { AnimatePresence } from 'framer-motion';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

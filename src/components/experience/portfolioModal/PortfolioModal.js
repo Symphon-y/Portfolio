@@ -8,6 +8,7 @@ import LingoLingo from './components/LingoLingo';
 import SoleInc from './components/SoleInc';
 import SupernovaInfo from './components/SupernovaInfo';
 import AboutMe from './components/AboutMe';
+import CloseX from './components/icons/CloseX';
 
 const PortfolioModal = ({
   handleZoom,
@@ -34,6 +35,9 @@ const PortfolioModal = ({
   };
   return (
     <div className='modal-container'>
+      <div className='modal-close-container'>
+        <CloseX style={{ fill: '#212121', height: '1.5rem' }} />
+      </div>
       {content()}
       <Footer
         modal={modal}
