@@ -5,39 +5,30 @@ import {
   PresentationControls,
   ContactShadows,
   RandomizedLight,
-  Billboard,
   Html,
 } from '@react-three/drei';
 import Laptop from '../laptop/Laptop';
 import Coffee from '../coffee/Coffee';
 import Keyboard from '../keyboard/KeyboardTwo';
-import { Canvas, useThree } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import { KeyboardContextProvider } from '../../context/KeyboardContextProvider';
 import Particles from '../particles/Particles';
-import { Suspense, useContext, useRef, lazy } from 'react';
+import { Suspense, useContext, useRef } from 'react';
 import Iphone from '../iphone/Iphone';
 import Shoe from '../shoe/Shoe';
 import Supernova from '../project-supernova/Supernova';
 import Astronaught from '../astronaught/Astronaught';
 import useWindowDimensions from '../../hooks/useWindowDiminsions';
-
-import { useEffect } from 'react';
-import useModal from '../../hooks/useModal';
-import { ZoomContextProvider } from '../../context/ZoomContextProvider';
-import PortfolioModal from './portfolioModal/PortfolioModal';
 import PopUpModal from './portfolioModal/PopUpModal';
 import { ZoomContext } from '../../context/ZoomContext';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const Experience = () => {
-  // const { modal, setModal, popUpModal } = useModal();
   const { activeObject, setActiveObject, modal, setModal } =
     useContext(ZoomContext);
   const { width, height } = useWindowDimensions();
-
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   const mouse = useRef([0, 0]);
-  const ref = useRef();
 
   const container = {
     hidden: { opacity: 0 },

@@ -10,15 +10,12 @@ const Astronaught = ({
   ...props
 }) => {
   const group = useRef();
-  const [clicked, isClicked] = useState(false);
   const { handleZoom, handleUnzoom } = useZoom();
   const { nodes, materials, animations } = useGLTF(
     '/animated_floating_astronaut_in_space_suit_loop.glb'
   );
   const { actions } = useAnimations(animations, group);
   useEffect(() => {
-    console.log('Astronaught');
-    console.log(animations);
     actions.Animation.play();
   });
   useEffect(() => {
