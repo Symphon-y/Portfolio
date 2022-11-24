@@ -19,7 +19,7 @@ const AboutMe = () => {
           <img
             className='avatar'
             src='https://avatars.githubusercontent.com/u/90964291?v=4?s=100'
-            alt='sole inc logo'
+            alt='Travis Redden'
           />
           <div className='aboutme-header-info-container'>
             <h3>Hi all! I am</h3>
