@@ -2,6 +2,7 @@ import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Experience from '../components/experience/Experience';
 import App from '../App';
+import MobileExperience from '../components/experience/portfolioModal/components/mobile/MobileExperience';
 
 export const routes = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ export const routes = createBrowserRouter([
         element: <Experience />,
       },
     ],
+  },
+  {
+    path: '/mobile',
+    element: <MobileExperience />,
   },
 ]);
 

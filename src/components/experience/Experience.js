@@ -22,6 +22,7 @@ import useWindowDimensions from '../../hooks/useWindowDiminsions';
 import PopUpModal from './portfolioModal/PopUpModal';
 import { ZoomContext } from '../../context/ZoomContext';
 import { AnimatePresence, motion } from 'framer-motion';
+import MobileExperience from './portfolioModal/components/mobile/MobileExperience';
 
 const Experience = () => {
   const { activeObject, setActiveObject, modal, setModal } =
@@ -40,10 +41,14 @@ const Experience = () => {
     },
   };
 
-  const item = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1 },
-  };
+  if (isMobile) {
+    return (
+      <>
+        <MobileExperience />
+      </>
+    );
+  }
+
   return (
     <>
       <Canvas>
