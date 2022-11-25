@@ -116,8 +116,8 @@ const AboutMe = () => {
                 flexDirection: 'row',
                 justifyContent: 'space-evenly',
                 alignItems: 'center',
-                marginRight: '1rem',
-                marginLeft: '1rem',
+                marginRight: '.25rem',
+                marginLeft: '.25rem',
               }}>
               <LinkedIn
                 style={{ fill: 'white', scale: '1.2', width: '2rem' }}
@@ -137,8 +137,8 @@ const AboutMe = () => {
                 flexDirection: 'row',
                 justifyContent: 'space-evenly',
                 alignItems: 'center',
-                marginRight: '1rem',
-                marginLeft: '1rem',
+                marginRight: '.25rem',
+                marginLeft: '.25rem',
               }}>
               <MailIcon style={{ fill: 'white', scale: '.9', width: '2rem' }} />
               Email
