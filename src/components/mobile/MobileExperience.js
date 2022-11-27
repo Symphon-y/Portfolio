@@ -1,4 +1,4 @@
-import { Html } from '@react-three/drei';
+import { Html, PresentationControls, Text } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Suspense } from 'react';

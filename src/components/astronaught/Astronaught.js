@@ -13,9 +13,6 @@ const Astronaught = ({
 }) => {
   // Ref for glow effect
   const meshRef = useRef();
-  const meshRef2 = useRef();
-  const meshRef3 = useRef();
-  const meshRef4 = useRef();
   const group = useRef();
   const { handleZoom, handleUnzoom } = useZoom();
   const { nodes, materials, animations } = useGLTF(

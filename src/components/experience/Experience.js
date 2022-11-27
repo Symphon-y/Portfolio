@@ -107,13 +107,6 @@ const Experience = () => {
             {/* Sets the default Lighting settings for the scene */}
             {/* <Skybox /> */}
             <Environment preset='city' />
-            {/* Sets the camera controls,
-        global allows grabbing from anywhere in the scene
-        rotation sets the default rotation parameters
-        polar sets a rotation limit for the Y axis
-        azimuth sets the rotation limit for the X axis
-        config alters the internal Spring library animation settings #jiggle-physics
-        snap returns the object to its initial position */}
             {/* <Bounds fit={false} observe={false} damping={4} margin={1}> */}
             {/* {popUpModal()} */}
             <EffectComposer autoClear={false}>
@@ -134,6 +127,13 @@ const Experience = () => {
               />
             </EffectComposer>
             <PopUpModal modal={modal} setModal={setModal} />
+            {/* Sets the camera controls,
+              global allows grabbing from anywhere in the scene
+              rotation sets the default rotation parameters
+              polar sets a rotation limit for the Y axis
+              azimuth sets the rotation limit for the X axis
+              config alters the internal Spring library animation settings #jiggle-physics
+              snap returns the object to its initial position */}
             <PresentationControls
               global
               rotation={[0.13, 0.5, 0]}
@@ -203,15 +203,6 @@ const Experience = () => {
                   color='red'
                 />
 
-                {/* <pointLight
-                  width={1}
-                  height={1}
-                  intensity={30}
-                  color={'#48ABFE'}
-                  position={[900, 900, -100]}
-                  rotation={[0, 180, 12]}
-                /> */}
-
                 <mesh
                   position={[-4, -0.5, 0]}
                   scale={0.25}
@@ -275,12 +266,6 @@ const Experience = () => {
               </Float>
             </PresentationControls>
             {/* Adds default shadows to the scene */}
-            {/* <ContactShadows
-              position-y={-1.4}
-              opacity={0.4}
-              scale={7}
-              blur={2.4}
-            />{' '} */}
           </Suspense>
         </AnimatePresence>
       </Canvas>

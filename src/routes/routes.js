@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Experience from '../components/experience/Experience';
 import App from '../App';
 import MobileExperience from '../components/mobile/MobileExperience';
+import ComingSoon from '../components/comingsoon/ComingSoon';
 
 export const routes = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ export const routes = createBrowserRouter([
       {
         path: '/mobile',
         element: <MobileExperience />,
+      },
+      {
+        path: '/coming-soon',
+        element: <ComingSoon />,
       },
     ],
   },

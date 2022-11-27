@@ -16,9 +16,11 @@ function App() {
       },
     },
   };
+
+  //TODO update the route to mobile in production when ready
   useEffect(() => {
     if (isMobile) {
-      navigate('/mobile');
+      navigate('/coming-soon');
     } else {
       navigate('/home');
     }
