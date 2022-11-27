@@ -490,7 +490,7 @@ button {
 .aboutme-footer {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -523,6 +523,10 @@ button {
   margin-right: 1rem;
 }
 
+.modal-contact-button {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
 
 
 /* Fallback Loader */

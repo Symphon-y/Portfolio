@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
+import ResumeIcon from '../../../iframe/components/Icons/ResumeIcon';
 import BtnPrimary from '../../../shared/BtnPrimary';
 import Header from './Header';
 import Github from './logos/Github';
@@ -83,7 +84,7 @@ const AboutMe = () => {
         </p>
         <div className='aboutme-footer'>
           <BtnPrimary
-            className={'btn-secondary'}
+            className={'btn-secondary modal-contact-button'}
             onClick={(e) => {
               e.stopPropagation();
               window.open('https://github.com/Symphon-y', '_blank');
@@ -94,7 +95,7 @@ const AboutMe = () => {
             </div>
           </BtnPrimary>
           <BtnPrimary
-            className={'btn-secondary '}
+            className={'btn-secondary modal-contact-button '}
             onClick={(e) => {
               e.stopPropagation();
               window.open(
@@ -108,7 +109,7 @@ const AboutMe = () => {
             </div>
           </BtnPrimary>
           <BtnPrimary
-            className={'btn-secondary '}
+            className={'btn-secondary modal-contact-button '}
             onClick={(e) => {
               e.stopPropagation();
               window.open('mailto:travisredden@outlook.com', '_blank');
@@ -119,6 +120,20 @@ const AboutMe = () => {
                 className={'modal-contact-button-icon'}
               />
               Email
+            </div>
+          </BtnPrimary>
+          <BtnPrimary
+            className={'btn-secondary modal-contact-button'}
+            onClick={(e) => {
+              e.stopPropagation();
+              window.open('/Travis_Redden_Resume.pdf', '_blank');
+            }}>
+            <div className='modal-contact-button-container'>
+              <ResumeIcon
+                className={'modal-contact-button-icon'}
+                style={{ scale: '.75' }}
+              />
+              <span className='modal-contact-button-text'>Download Resume</span>
             </div>
           </BtnPrimary>
         </div>
