@@ -428,6 +428,25 @@ button {
   border-radius: 10.56px;
 }
 
+.modal-btn-label {
+  background: linear-gradient(to right, #48ABFE 50%, rgba(255, 255, 255, 0) 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .3s ease-out;
+  text-decoration: none;
+}
+
+.modal-btn-label:hover {
+  text-decoration: none;
+  color: #ffffff;
+  background-position: left bottom;
+}
+
+.modal-btn-label:hover  .modal-contact-button-icon {
+  transition: all .3s ease-out;
+  fill: white;
+}
+
 .github {
   width: 14rem;
   margin-top: 1.2rem;

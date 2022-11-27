@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
+import { useState } from 'react';
 import ResumeIcon from '../../../iframe/components/Icons/ResumeIcon';
 import BtnPrimary from '../../../shared/BtnPrimary';
 import Header from './Header';
@@ -84,7 +85,7 @@ const AboutMe = () => {
         </p>
         <div className='aboutme-footer'>
           <BtnPrimary
-            className={'btn-secondary modal-contact-button'}
+            className={'btn-secondary modal-contact-button modal-btn-label'}
             onClick={(e) => {
               e.stopPropagation();
               window.open('https://github.com/Symphon-y', '_blank');
@@ -95,7 +96,7 @@ const AboutMe = () => {
             </div>
           </BtnPrimary>
           <BtnPrimary
-            className={'btn-secondary modal-contact-button '}
+            className={'btn-secondary modal-contact-button modal-btn-label'}
             onClick={(e) => {
               e.stopPropagation();
               window.open(
@@ -109,7 +110,7 @@ const AboutMe = () => {
             </div>
           </BtnPrimary>
           <BtnPrimary
-            className={'btn-secondary modal-contact-button '}
+            className={'btn-secondary modal-contact-button modal-btn-label'}
             onClick={(e) => {
               e.stopPropagation();
               window.open('mailto:travisredden@outlook.com', '_blank');
@@ -123,7 +124,7 @@ const AboutMe = () => {
             </div>
           </BtnPrimary>
           <BtnPrimary
-            className={'btn-secondary modal-contact-button'}
+            className={'btn-secondary modal-contact-button modal-btn-label'}
             onClick={(e) => {
               e.stopPropagation();
               window.open('/Travis_Redden_Resume.pdf', '_blank');
