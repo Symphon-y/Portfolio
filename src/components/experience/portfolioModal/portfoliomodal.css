@@ -384,12 +384,29 @@ p, li {
   justify-content: space-between;
   align-items: center;
 }
+
+
 .previous-button {
+  background: linear-gradient(to right, #000000df 50%, #00000080 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  background-clip: text;
+  transition: all .3s ease-out;
   cursor: pointer;
-  background-color: transparent;
   text-decoration: none;
   border: none;
-  color: rgba(0, 0, 0, .5);
+  color: transparent;
+}
+.previous-button:hover {
+  background-position: left bottom;
+}
+
+.footer-left-arrow {
+  stroke:  #00000080;
+}
+.previous-btn-container:hover .footer-left-arrow {
+  transition: all 0.3s ease-out;
+  stroke: #000000df;
 }
 
 button {
@@ -399,7 +416,10 @@ button {
 }
 
 .btn-primary {
-  background-color: #48ABFE;
+  background: linear-gradient(to right, #48acfec8 50%, #48ABFE 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .3s ease-out;
   font-family: 'Work Sans';
   font-size: 1.15rem;
   font-weight: 500;
@@ -411,6 +431,42 @@ button {
   border: none;
   border-radius: 10.56px;
 }
+
+.btn-primary:hover {
+  background-position: left bottom;
+}
+.btn-soleinc {
+  background: linear-gradient(to right, #87e9e5 50%, #80dbd8 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .3s ease-out;
+  width: 11.25rem;
+  fill: white;
+}
+
+.btn-soleinc:hover {
+  background-position: left bottom;
+}
+
+.btn-supernova {
+  background: linear-gradient(to right, #ff424f 50%, #EF3B46 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .3s ease-out;
+  width: 11.25rem;
+  fill: white;
+  /* background-color: #EF3B46; */
+}
+
+.btn-supernova:hover {
+  background-position: left bottom;
+  /* background-color: #ff424f; */
+}
+.btn-lingolingo {
+  width: 11.25rem;
+}
+
+
 
 .btn-secondary {
   background-color: transparent;;

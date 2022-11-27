@@ -13,8 +13,7 @@ const SupernovaInfo = () => {
         </div>
         <SupernovaLogo style={{ width: '30rem' }} />
         <BtnPrimary
-          className={'btn-primary github'}
-          style={{ fill: 'white', backgroundColor: '#EF3B46' }}
+          className={'btn-primary github btn-supernova'}
           onClick={(e) => {
             e.stopPropagation();
             window.open(

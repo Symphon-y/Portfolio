@@ -62,17 +62,16 @@ const Footer = ({
   let style;
   switch (activeObject) {
     default:
-      style = { width: '11.25rem' };
+      style = 'btn-primary btn-lingolingo';
       break;
     case 'PHONE':
-      style = { width: '11.25rem' };
+      style = 'btn-primary btn-lingolingo';
       break;
     case 'SHOE':
-      style = { width: '11.25rem', backgroundColor: '#80dbd8' };
+      style = 'btn-primary btn-soleinc';
       break;
     case 'PLANET':
-      style = { width: '11.25rem', backgroundColor: '#EF3B46' };
-      break;
+      style = 'btn-primary btn-supernova';
   }
 
   return (
@@ -84,7 +83,7 @@ const Footer = ({
             Previous
           </button>
         </div>
-        <BtnPrimary onClick={handleNext} style={style}>
+        <BtnPrimary onClick={handleNext} className={style}>
           {activeObject !== 'SPACEMAN' ? 'Next' : 'Home'}
         </BtnPrimary>
       </div>
