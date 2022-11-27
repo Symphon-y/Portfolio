@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import BtnPrimary from '../../../shared/BtnPrimary';
 import Header from './Header';
 import Github from './logos/Github';
@@ -12,6 +13,7 @@ const LingoLingo = () => {
         </div>
         <LingoLogo />
         <BtnPrimary
+          style={{ fill: 'white' }}
           className={'btn-primary github'}
           onClick={(e) => {
             e.stopPropagation();

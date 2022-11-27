@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import BtnPrimary from '../../../shared/BtnPrimary';
 import Header from './Header';
 import Github from './logos/Github';
@@ -13,7 +14,7 @@ const SupernovaInfo = () => {
         <SupernovaLogo style={{ width: '30rem' }} />
         <BtnPrimary
           className={'btn-primary github'}
-          style={{ backgroundColor: '#EF3B46' }}
+          style={{ fill: 'white', backgroundColor: '#EF3B46' }}
           onClick={(e) => {
             e.stopPropagation();
             window.open(

@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-import { ZoomContext } from '../../../../context/ZoomContext';
 import BtnPrimary from '../../../shared/BtnPrimary';
 import LeftArrow from './icons/leftArrow';
 
@@ -11,6 +9,7 @@ const Footer = ({
   activeObject,
   setActiveObject,
 }) => {
+  // TODO: Extract this?
   const navList = {
     DEFAULT_CAMERA: {
       next: 'SCREEN',
@@ -59,20 +58,20 @@ const Footer = ({
     });
     e.stopPropagation();
   };
-
+  // TODO: Extract this??
   let style;
   switch (activeObject) {
     default:
-      style = {};
+      style = { width: '11.25rem' };
       break;
     case 'PHONE':
-      style = {};
+      style = { width: '11.25rem' };
       break;
     case 'SHOE':
-      style = { backgroundColor: '#80dbd8' };
+      style = { width: '11.25rem', backgroundColor: '#80dbd8' };
       break;
     case 'PLANET':
-      style = { backgroundColor: '#EF3B46' };
+      style = { width: '11.25rem', backgroundColor: '#EF3B46' };
       break;
   }
 
@@ -86,7 +85,7 @@ const Footer = ({
           </button>
         </div>
         <BtnPrimary onClick={handleNext} style={style}>
-          Next
+          {activeObject !== 'SPACEMAN' ? 'Next' : 'Home'}
         </BtnPrimary>
       </div>
     </div>

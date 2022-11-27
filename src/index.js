@@ -5,12 +5,15 @@ import { RouterProvider } from 'react-router';
 import { routes } from './routes/routes';
 import { ZoomContextProvider } from './context/ZoomContextProvider';
 import './index.css';
+import { AnimatePresence } from 'framer-motion';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ZoomContextProvider>
-      <RouterProvider router={routes} />
+      <AnimatePresence>
+        <RouterProvider router={routes} />
+      </AnimatePresence>
     </ZoomContextProvider>
   </React.StrictMode>
 );

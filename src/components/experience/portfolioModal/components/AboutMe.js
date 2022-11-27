@@ -83,26 +83,18 @@ const AboutMe = () => {
         </p>
         <div className='aboutme-footer'>
           <BtnPrimary
-            className={'btn-primary github'}
+            className={'btn-secondary'}
             onClick={(e) => {
               e.stopPropagation();
               window.open('https://github.com/Symphon-y', '_blank');
             }}>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                marginRight: '1rem',
-                marginLeft: '1rem',
-              }}>
-              <Github style={{ width: '2rem' }} />
+            <div className='modal-contact-button-container'>
+              <Github className={'modal-contact-button-icon'} />
               View My Github
             </div>
           </BtnPrimary>
           <BtnPrimary
-            className={'btn-primary github'}
+            className={'btn-secondary '}
             onClick={(e) => {
               e.stopPropagation();
               window.open(
@@ -110,37 +102,22 @@ const AboutMe = () => {
                 '_blank'
               );
             }}>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-evenly',
-                alignItems: 'center',
-                marginRight: '.25rem',
-                marginLeft: '.25rem',
-              }}>
-              <LinkedIn
-                style={{ fill: 'white', scale: '1.2', width: '2rem' }}
-              />
+            <div className='modal-contact-button-container'>
+              <LinkedIn className={'modal-contact-button-icon'} />
               LinkedIn
             </div>
           </BtnPrimary>
           <BtnPrimary
-            className={'btn-primary github'}
+            className={'btn-secondary '}
             onClick={(e) => {
               e.stopPropagation();
               window.open('mailto:travisredden@outlook.com', '_blank');
             }}>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-evenly',
-                alignItems: 'center',
-                marginRight: '.25rem',
-                marginLeft: '.25rem',
-              }}>
-              <MailIcon style={{ fill: 'white', scale: '.9', width: '2rem' }} />
+            <div className='modal-contact-button-container'>
+              <MailIcon
+                style={{ scale: '1' }}
+                className={'modal-contact-button-icon'}
+              />
               Email
             </div>
           </BtnPrimary>
