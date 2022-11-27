@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import BtnPrimary from '../../../shared/BtnPrimary';
 import Header from './Header';
 import Github from './logos/Github';
@@ -14,8 +15,7 @@ const SoleInc = () => {
           alt='sole inc logo'
         />
         <BtnPrimary
-          className={'btn-primary github'}
-          style={{ backgroundColor: '#80dbd8' }}
+          className={'btn-primary github btn-soleinc'}
           onClick={(e) => {
             e.stopPropagation();
             window.open(

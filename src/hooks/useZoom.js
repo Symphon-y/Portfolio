@@ -1,11 +1,10 @@
-import { useState, useCallback, useContext, useEffect } from 'react';
+import { useCallback, useContext } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { POSITIONS, ROTATIONS } from '../types/constants';
 import * as TWEEN from '@tweenjs/tween.js';
 import { ZoomContext } from '../context/ZoomContext';
 
 const useZoom = () => {
-  // const [activeObject, setActiveObject] = useState('DEFAULT_CAMERA');
   const camera = useThree((state) => state.camera);
   const { activeObject, setActiveObject } = useContext(ZoomContext);
   useFrame(() => {

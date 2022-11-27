@@ -144,14 +144,15 @@
   left: 0;
   height: auto;
 }
+
 .browser-tab {
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  top: 1rem;
-  left: 6.4rem;
-  color: white;
-  font-size: 1rem;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	top: .5rem;
+	left: 4.1rem;
+	color: white;
+	font-size: 1rem;
 }
 .intro-container {
   display: flex;
@@ -174,7 +175,7 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: wrap;;
   width: 100%;
 }
 
@@ -234,7 +235,7 @@ a:link {
 
 .label:hover {
   text-decoration: none;
-  color: #c8c1b8;
+  color: #ffffff;
   background-position: left bottom;
 }
 
@@ -375,4 +376,37 @@ a:link {
 .iframe-background-image {
   position: fixed;
   left: 750;
+}
+
+.iframe-contact-links-container {
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 34rem;
+}
+.iframe-contact-button {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+.iframe-contact-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.iframe-contact-button-icon {
+  fill: white;
+  scale: 1.2;
+  width: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.iframe-contact-button-text {
+  margin-right: 1rem;
 }

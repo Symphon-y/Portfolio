@@ -1,17 +1,21 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useGLTF } from '@react-three/drei';
 import useZoom from '../../hooks/useZoom';
 
 const Supernova = ({
+  hovered,
+  onHover,
   activeObject,
   setActiveObject,
   modal,
   setModal,
   ...props
 }) => {
+  const [hover, setHover] = useState(false);
   const { handleZoom, handleUnzoom } = useZoom();
   const { nodes, materials } = useGLTF('/space_exploration_wlp_series_8.glb');
-
+  // Ref for glow effect
+  const meshRef = useRef();
   useEffect(() => {
     if (activeObject === 'PLANET' && !modal.open) {
       setModal({
@@ -39,6 +43,12 @@ const Supernova = ({
       onPointerMissed={() => {
         handleUnzoom();
         setModal({ ...modal, open: false });
+      }}
+      onPointerOver={() => {
+        setHover(true);
+      }}
+      onPointerLeave={() => {
+        setHover(false);
       }}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group
@@ -50,6 +60,9 @@ const Supernova = ({
             receiveShadow
             geometry={nodes.planet001_1.geometry}
             material={materials.scene}
+            ref={meshRef}
+            onPointerOver={(e) => onHover(meshRef)}
+            onPointerOut={(e) => onHover(null)}
           />
           <mesh
             castShadow

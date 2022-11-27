@@ -1,11 +1,23 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useGLTF } from '@react-three/drei';
 import useZoom from '../../hooks/useZoom';
 import Header from '../description/header';
 import Body from '../description/body';
 
-const Shoe = ({ activeObject, setActiveObject, modal, setModal, ...props }) => {
+const Shoe = ({
+  onHover,
+  activeObject,
+  setActiveObject,
+  modal,
+  setModal,
+  ...props
+}) => {
   const { handleZoom, handleUnzoom } = useZoom();
+  // Hover State For Zoom
+  const [hover, setHover] = useState(false);
+
+  // Ref for glow effect
+  const meshRef = useRef();
   const { nodes, materials } = useGLTF('/nike_air_zoom_pegasus_36.glb');
   useEffect(() => {
     if (activeObject === 'SHOE' && !modal.open) {
@@ -42,6 +54,9 @@ const Shoe = ({ activeObject, setActiveObject, modal, setModal, ...props }) => {
             receiveShadow
             geometry={nodes.defaultMaterial.geometry}
             material={materials.NikeShoe}
+            ref={meshRef}
+            onPointerOver={(e) => onHover(meshRef)}
+            onPointerOut={(e) => onHover(null)}
           />
         </group>
       </group>

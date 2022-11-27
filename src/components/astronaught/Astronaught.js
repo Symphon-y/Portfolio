@@ -3,12 +3,16 @@ import { useGLTF, useAnimations } from '@react-three/drei';
 import useZoom from '../../hooks/useZoom';
 
 const Astronaught = ({
+  hovered,
+  onHover,
   activeObject,
   setActiveObject,
   modal,
   setModal,
   ...props
 }) => {
+  // Ref for glow effect
+  const meshRef = useRef();
   const group = useRef();
   const { handleZoom, handleUnzoom } = useZoom();
   const { nodes, materials, animations } = useGLTF(
@@ -46,7 +50,10 @@ const Astronaught = ({
       onPointerMissed={() => {
         handleUnzoom();
         setModal({ ...modal, open: false });
-      }}>
+      }}
+      onPointerOver={(e) => onHover(meshRef)}
+      onPointerOut={(e) => onHover(null)}>
+      >
       <group name='Sketchfab_Scene'>
         <group
           name='Sketchfab_model'
@@ -90,6 +97,7 @@ const Astronaught = ({
                       geometry={nodes.Object_106.geometry}
                       material={materials.material_2}
                       skeleton={nodes.Object_106.skeleton}
+                      ref={meshRef}
                     />
                   </group>
                 </group>

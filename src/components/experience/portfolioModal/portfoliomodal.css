@@ -384,12 +384,29 @@ p, li {
   justify-content: space-between;
   align-items: center;
 }
+
+
 .previous-button {
+  background: linear-gradient(to right, #000000df 50%, #00000080 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  background-clip: text;
+  transition: all .3s ease-out;
   cursor: pointer;
-  background-color: transparent;
   text-decoration: none;
   border: none;
-  color: rgba(0, 0, 0, .5);
+  color: transparent;
+}
+.previous-button:hover {
+  background-position: left bottom;
+}
+
+.footer-left-arrow {
+  stroke:  #00000080;
+}
+.previous-btn-container:hover .footer-left-arrow {
+  transition: all 0.3s ease-out;
+  stroke: #000000df;
 }
 
 button {
@@ -399,17 +416,91 @@ button {
 }
 
 .btn-primary {
-  background-color: #48ABFE;
+  background: linear-gradient(to right, #48acfec8 50%, #48ABFE 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .3s ease-out;
   font-family: 'Work Sans';
   font-size: 1.15rem;
   font-weight: 500;
   cursor: pointer;
-  width: 11.25rem;
+  width: auto;
   height: 3.4rem;
   text-decoration: none;
   color: white;
   border: none;
   border-radius: 10.56px;
+}
+
+.btn-primary:hover {
+  background-position: left bottom;
+}
+.btn-soleinc {
+  background: linear-gradient(to right, #87e9e5 50%, #80dbd8 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .3s ease-out;
+  width: 11.25rem;
+  fill: white;
+}
+
+.btn-soleinc:hover {
+  background-position: left bottom;
+}
+
+.btn-supernova {
+  background: linear-gradient(to right, #ff424f 50%, #EF3B46 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .3s ease-out;
+  width: 11.25rem;
+  fill: white;
+  /* background-color: #EF3B46; */
+}
+
+.btn-supernova:hover {
+  background-position: left bottom;
+  /* background-color: #ff424f; */
+}
+.btn-lingolingo {
+  width: 11.25rem;
+}
+
+
+
+.btn-secondary {
+  background-color: transparent;;
+  font-family: 'Work Sans';
+  font-size: 1.15rem;
+  font-weight: 500;
+  cursor: pointer;
+  width: auto;
+  height: 3.4rem;
+  text-decoration: none;
+  color: #48ABFE;
+  border-style: solid;
+  height: 3.35rem;
+  border-color: #48ABFE;
+  border-radius: 10.56px;
+}
+
+.modal-btn-label {
+  background: linear-gradient(to right, #48ABFE 50%, rgba(255, 255, 255, 0) 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .3s ease-out;
+  text-decoration: none;
+}
+
+.modal-btn-label:hover {
+  text-decoration: none;
+  color: #ffffff;
+  background-position: left bottom;
+}
+
+.modal-btn-label:hover  .modal-contact-button-icon {
+  transition: all .3s ease-out;
+  fill: white;
 }
 
 .github {
@@ -474,7 +565,7 @@ button {
 .aboutme-footer {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -490,6 +581,28 @@ button {
   width: 100%;
   height: 5rem;
 }
+
+.modal-contact-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.modal-contact-button-icon {
+  fill: #48ABFE;
+  scale: 1.2;
+  width: 2rem;
+  margin-right: 1rem;
+}
+
+.modal-contact-button {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
 
 /* Fallback Loader */
 

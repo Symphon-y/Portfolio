@@ -124,7 +124,11 @@ const Iframe = ({ activeObject, handleZoom, handleUnzoom }) => {
         />
 
         <Activities />
-        <Projects />
+        <Projects
+          activeObject={activeObject}
+          handleZoom={handleZoom}
+          handleUnzoom={handleUnzoom}
+        />
         <Publications />
         <Education />
         <Contact />

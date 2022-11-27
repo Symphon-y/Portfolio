@@ -3,17 +3,16 @@ import {
   Float,
   Environment,
   PresentationControls,
-  ContactShadows,
   RandomizedLight,
   Html,
+  Stars,
 } from '@react-three/drei';
 import Laptop from '../laptop/Laptop';
 import Coffee from '../coffee/Coffee';
 import Keyboard from '../keyboard/KeyboardTwo';
 import { Canvas } from '@react-three/fiber';
 import { KeyboardContextProvider } from '../../context/KeyboardContextProvider';
-import Particles from '../particles/Particles';
-import { Suspense, useContext, useRef } from 'react';
+import { Suspense, useContext, useState } from 'react';
 import Iphone from '../iphone/Iphone';
 import Shoe from '../shoe/Shoe';
 import Supernova from '../project-supernova/Supernova';
@@ -22,14 +21,32 @@ import useWindowDimensions from '../../hooks/useWindowDiminsions';
 import PopUpModal from './portfolioModal/PopUpModal';
 import { ZoomContext } from '../../context/ZoomContext';
 import { AnimatePresence, motion } from 'framer-motion';
+import {
+  EffectComposer,
+  Outline,
+  SelectiveBloom,
+} from '@react-three/postprocessing';
 
 const Experience = () => {
+  // Hover State For Outline Effect
+  const [hovered, onHover] = useState(null);
+  const selected = hovered ? [hovered] : undefined;
+
   const { activeObject, setActiveObject, modal, setModal } =
     useContext(ZoomContext);
   const { width, height } = useWindowDimensions();
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  const mouse = useRef([0, 0]);
+  let hoverGlow;
 
+  switch (activeObject) {
+    case 'PLANET':
+      hoverGlow = '#EF3B46';
+      break;
+    case 'SHOE':
+      hoverGlow = '#80dbd8';
+      break;
+    default:
+      hoverGlow = '#48ABFE';
+  }
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -40,10 +57,6 @@ const Experience = () => {
     },
   };
 
-  const item = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1 },
-  };
   return (
     <>
       <Canvas>
@@ -72,9 +85,18 @@ const Experience = () => {
             {/* TODO: CREATE A FULL SCREEN IMAGE THAT FADES IN ON MOUNT WITH AN ENTER
             BUTTON WHICH ON CLICK FADES AND REMOVES THE FULL SCREEN ELEMENT FROM THE DOM  */}
             {/* Adds Fake Stars to Background */}
-            <Particles count={isMobile ? 5000 : 10000} mouse={mouse} />
+            <Stars
+              radius={100}
+              depth={50}
+              count={5000}
+              factor={4}
+              saturation={0}
+              fade
+              speed={1}
+            />
+            {/* <Particles count={10000} mouse={mouse} /> */}
             {/* Sets the Background Color of the scene */}
-            <color args={['#151515']} attach='background' />
+            <color args={['#000000']} attach='background' />
             <RandomizedLight
               amount={8}
               radius={5}
@@ -85,16 +107,33 @@ const Experience = () => {
             {/* Sets the default Lighting settings for the scene */}
             {/* <Skybox /> */}
             <Environment preset='city' />
-            {/* Sets the camera controls,
-        global allows grabbing from anywhere in the scene
-        rotation sets the default rotation parameters
-        polar sets a rotation limit for the Y axis
-        azimuth sets the rotation limit for the X axis
-        config alters the internal Spring library animation settings #jiggle-physics
-        snap returns the object to its initial position */}
             {/* <Bounds fit={false} observe={false} damping={4} margin={1}> */}
             {/* {popUpModal()} */}
+            <EffectComposer autoClear={false}>
+              {/* Creates an Outline on the selected object */}
+              <Outline
+                selection={selected}
+                visibleEdgeColor={hoverGlow}
+                edgeStrength={5}
+                blur={true}
+                pulseSpeed={0.25}
+              />
+              {/* Creates a Glow on the selected object */}
+              <SelectiveBloom
+                selection={selected}
+                intensity={0.75}
+                luminanceThreshold={0.18}
+                luminanceSmoothing={0.15}
+              />
+            </EffectComposer>
             <PopUpModal modal={modal} setModal={setModal} />
+            {/* Sets the camera controls,
+              global allows grabbing from anywhere in the scene
+              rotation sets the default rotation parameters
+              polar sets a rotation limit for the Y axis
+              azimuth sets the rotation limit for the X axis
+              config alters the internal Spring library animation settings #jiggle-physics
+              snap returns the object to its initial position */}
             <PresentationControls
               global
               rotation={[0.13, 0.5, 0]}
@@ -134,7 +173,12 @@ const Experience = () => {
                   scale={-0.4}
                   rotation-x={Math.PI * 0.85}
                   rotation-y={Math.PI * 0.25}>
-                  <Coffee modal={modal} setModal={setModal} />
+                  <Coffee
+                    modal={modal}
+                    hovered={hovered}
+                    onHover={onHover}
+                    setModal={setModal}
+                  />
                 </mesh>
                 {/* Adds Keyboard Mesh */}
                 <mesh
@@ -142,19 +186,19 @@ const Experience = () => {
                   scale={15}
                   rotation-y={Math.PI * -0.25}>
                   <KeyboardContextProvider>
-                    <Keyboard />
+                    <Keyboard hovered={hovered} onHover={onHover} />
                   </KeyboardContextProvider>
                 </mesh>
 
                 <pointLight
                   position={[2, -3, 2]}
-                  distance={100}
-                  intensity={3}
+                  distance={10}
+                  intensity={10}
                   color='blue'
                 />
                 <pointLight
                   position={[-1, 1, 2]}
-                  distance={100}
+                  distance={10}
                   intensity={2}
                   color='red'
                 />
@@ -170,6 +214,8 @@ const Experience = () => {
                     setActiveObject={setActiveObject}
                     modal={modal}
                     setModal={setModal}
+                    hovered={hovered}
+                    onHover={onHover}
                   />
                 </mesh>
                 <mesh
@@ -183,6 +229,8 @@ const Experience = () => {
                     setActiveObject={setActiveObject}
                     modal={modal}
                     setModal={setModal}
+                    hovered={hovered}
+                    onHover={onHover}
                   />
                 </mesh>
                 <mesh
@@ -196,6 +244,8 @@ const Experience = () => {
                     setActiveObject={setActiveObject}
                     modal={modal}
                     setModal={setModal}
+                    hovered={hovered}
+                    onHover={onHover}
                   />
                 </mesh>
                 <mesh
@@ -209,17 +259,13 @@ const Experience = () => {
                     setActiveObject={setActiveObject}
                     modal={modal}
                     setModal={setModal}
+                    hovered={hovered}
+                    onHover={onHover}
                   />
                 </mesh>
               </Float>
             </PresentationControls>
             {/* Adds default shadows to the scene */}
-            <ContactShadows
-              position-y={-1.4}
-              opacity={0.4}
-              scale={7}
-              blur={2.4}
-            />{' '}
           </Suspense>
         </AnimatePresence>
       </Canvas>

@@ -36,7 +36,9 @@ const PortfolioModal = ({
   return (
     <div className='modal-container'>
       <div className='modal-close-container'>
-        <CloseX style={{ fill: '#212121', height: '1.5rem' }} />
+        <CloseX
+          style={{ cursor: 'pointer', fill: '#212121', height: '1.5rem' }}
+        />
       </div>
       {content()}
       <Footer

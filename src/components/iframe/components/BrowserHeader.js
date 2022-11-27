@@ -1,13 +1,12 @@
-import { gotjokes } from './gotjokes';
-
-const BrowserHeader = () => {
+import { gotjokes } from '../../../../src/assets/data/gotjokes';
+const BrowserHeader = ({ ...props }) => {
   const getRandomJoke = () => {
     return gotjokes[Math.floor(Math.random() * gotjokes.length)];
   };
   return (
     <div className='browser-header'>
       <h1 className='browser-tab'>{getRandomJoke()}</h1>
-      <svg width='1600' height='80' viewBox='0 0 1600 80' fill='none'>
+      <svg {...props} viewBox='0 0 1600 80' fill='none'>
         <rect
           width='1600'
           height='36'
