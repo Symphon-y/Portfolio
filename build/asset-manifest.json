@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.3ca805da.css",
-    "main.js": "/static/js/main.b421705f.js",
+    "main.css": "/static/css/main.945cfe25.css",
+    "main.js": "/static/js/main.05b290a9.js",
     "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
     "static/media/WorkSans-Medium.ttf": "/static/media/WorkSans-Medium.f1dd9ac4126d93c6baeb.ttf",
     "static/media/WorkSans-SemiBold.ttf": "/static/media/WorkSans-SemiBold.8988ce2e3e8957a63db8.ttf",
@@ -60,12 +60,12 @@
     "static/media/oswald-v49-latin-200.woff2": "/static/media/oswald-v49-latin-200.988c3eb49827a1e74c78.woff2",
     "static/media/oswald-v49-latin-regular.woff2": "/static/media/oswald-v49-latin-regular.37ffdd2667b8a0045f0d.woff2",
     "index.html": "/index.html",
-    "main.3ca805da.css.map": "/static/css/main.3ca805da.css.map",
-    "main.b421705f.js.map": "/static/js/main.b421705f.js.map",
+    "main.945cfe25.css.map": "/static/css/main.945cfe25.css.map",
+    "main.05b290a9.js.map": "/static/js/main.05b290a9.js.map",
     "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ca805da.css",
-    "static/js/main.b421705f.js"
+    "static/css/main.945cfe25.css",
+    "static/js/main.05b290a9.js"
   ]
 }
