@@ -23,7 +23,7 @@ const Shoe = ({
     if (activeObject === 'SHOE' && !modal.open) {
       setModal({
         open: !modal.open,
-        position: [-190, 30, -155],
+        position: [-190, 42, -155],
       });
     }
   }, [modal.open, setModal, activeObject]);
@@ -36,7 +36,7 @@ const Shoe = ({
           handleZoom('SHOE');
           setModal({
             open: !modal.open,
-            position: [-190, 30, -155],
+            position: [-190, 42, -155],
           });
         } else {
           handleUnzoom();

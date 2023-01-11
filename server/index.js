@@ -1,11 +1,13 @@
 require('dotenv').config();
 const express = require('express');
+const compression = require('compression');
 const path = require('path');
 const app = express();
 const port = process.env.PORT || 5000;
-
 // Body Data
 app.use(express.json());
+// Compression
+app.use(compression());
 // Serves Static Files
 app.use(express.static(path.join(__dirname, '../build')));
 // Starts Server on Specified Port
