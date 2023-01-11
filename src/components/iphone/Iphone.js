@@ -40,7 +40,7 @@ const Iphone = ({
     if (activeObject === 'PHONE' && !modal.open) {
       setModal({
         open: !modal.open,
-        position: [-100, 78, -65],
+        position: [-100, 75, -35],
       });
     }
   }, [modal.open, setModal, activeObject]);
@@ -54,7 +54,7 @@ const Iphone = ({
             handleZoom('PHONE');
             setModal({
               open: !modal.open,
-              position: [-100, 78, -65],
+              position: [-100, 75, -35],
             });
           } else {
             handleUnzoom();
