@@ -15,7 +15,7 @@ import { KeyboardContextProvider } from '../../context/KeyboardContextProvider';
 import { Suspense, useContext, useState } from 'react';
 import Iphone from '../iphone/Iphone';
 import Shoe from '../shoe/Shoe';
-import Supernova from '../project-supernova/Supernova';
+import Supernova from '../project-supernova/supernova';
 import Astronaught from '../astronaught/Astronaught';
 import useWindowDimensions from '../../hooks/useWindowDiminsions';
 import PopUpModal from './portfolioModal/PopUpModal';
@@ -36,7 +36,11 @@ const Experience = () => {
     useContext(ZoomContext);
   const { width, height } = useWindowDimensions();
   let hoverGlow;
+  var w = window.innerWidth;
+  var h = window.innerHeight;
 
+  console.log('width', w);
+  console.log('height', h);
   switch (activeObject) {
     case 'PLANET':
       hoverGlow = '#EF3B46';

@@ -303,12 +303,12 @@ p, li {
       }
 
       100% {
-        height: 50rem;
+        height: 44rem;
         opacity: 100%;
       }
     }
       .modal-container {
-        height: 50rem;
+        height: 44rem;
         width: 37rem;
         overflow: hidden;
       }
