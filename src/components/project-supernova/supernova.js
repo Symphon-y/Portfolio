@@ -20,7 +20,7 @@ const Supernova = ({
     if (activeObject === 'PLANET' && !modal.open) {
       setModal({
         open: !modal.open,
-        position: [-400.26, 100.0, 50],
+        position: [-400.26, 120.0, 50],
       });
     }
   }, [modal.open, setModal, activeObject]);
@@ -33,7 +33,7 @@ const Supernova = ({
           handleZoom('PLANET');
           setModal({
             open: !modal.open,
-            position: [-400.26, 100.0, 50],
+            position: [-400.26, 120.0, 50],
           });
         } else {
           handleUnzoom();

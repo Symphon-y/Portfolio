@@ -40,7 +40,7 @@ const Astronaught = ({
           handleZoom('SPACEMAN');
           setModal({
             open: !modal.open,
-            position: [110, 95.0, -77],
+            position: [110, 98.0, -77],
           });
         } else {
           handleUnzoom();

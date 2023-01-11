@@ -289,7 +289,7 @@ p, li {
   padding-bottom: 2rem;
 }
 
-  @media only screen and (max-width: 1920px) {
+  @media only screen and (max-width: 1700px) {
 
     @keyframes portfolioAnimation {
       0% {
