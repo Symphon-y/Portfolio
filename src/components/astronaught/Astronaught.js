@@ -26,7 +26,7 @@ const Astronaught = ({
     if (activeObject === 'SPACEMAN' && !modal.open) {
       setModal({
         open: !modal.open,
-        position: [110, 95.0, -77],
+        position: [110, 98.0, -77],
       });
     }
   }, [modal.open, setModal, activeObject]);
